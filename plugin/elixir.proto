@@ -1,0 +1,23 @@
+syntax = "proto2";
+import "google/protobuf/descriptor.proto";
+
+option java_package = "fi.mod.protoc.gen.elixir";
+
+message ElixirOptions {
+}
+
+extend google.protobuf.FileOptions {
+    optional ElixirOptions elixir_fileopt = 74561;
+}
+
+extend google.protobuf.MessageOptions {
+    optional ElixirOptions elixir_msgopt = 74561;
+}
+
+extend google.protobuf.EnumOptions {
+    optional ElixirOptions elixir_enumopt = 74561;
+}
+
+extend google.protobuf.FieldOptions {
+    optional ElixirOptions elixir = 74561;
+}
