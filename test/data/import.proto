@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Imported;
+
+message MsgImported {
+	optional string optional_string = 1;
+	repeated string repeated_string = 2;
+}
