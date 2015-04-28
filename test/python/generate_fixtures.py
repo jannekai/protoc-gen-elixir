@@ -2,6 +2,7 @@
 import sys
 import os
 import base64
+import codecs
 from proto2json import to_json
 from proto.types_pb2 import Types
 from google.protobuf import text_format
@@ -22,7 +23,7 @@ test_values = {
     "double":        [ -1.0,     1.0,       0.0],
     "fixed32":       [ 0,        2**32-1,   1],
     "string":        [ "", "foo", "ᚠᛇᚻ᛫ᛒᛦᚦ᛫ᚠᚱᚩᚠᚢᚱ᛫ᚠᛁᚱᚪ᛫ᚷᛖᚻᚹᛦᛚᚳᚢᛗ"],
-    "bytes":         [ bytes([0x01,0x02,0x03,0x04])],
+    "bytes":         [ str(bytearray([1,2,3,4,0,255]))],
     "sfixed32":      [ -2**31,   2**31-1,   0, -1, 1],
     "float":         [ -1.0,     1.0,       0.0]
 }
@@ -35,8 +36,12 @@ fields_32bit            = ["fixed32", "sfixed32", "float"]
 def as_hex(message):
     return ''.join(["%02X" % ord(x) for x in message.SerializeToString()])
 
-def save_file(filename, data):
+def save_proto_data(filename, data):
     with open(filename, 'wb') as f:
+        f.write(data)
+
+def save_json_data(filename, data):
+    with open(filename, 'w') as f:
         f.write(data)
 
 def encode_value(value):
@@ -49,14 +54,15 @@ def encode_value(value):
 
 def generate_single_value_fixtures(directory):
     for type in fields_varint + fields_64bit + fields_32bit + fields_length_prefixed:
+        index = 0
         field = "f_" + type
         for value in test_values[type]:
-            filename = directory + "/" + type + "_" + encode_value(value) + ".bin"
             m = Types()
             setattr(m, field, value)
-            save_file(filename, m.SerializeToString())
-            to_json(m)
-
+            basename = directory + "/" + type + "_test_" + str(index)
+            save_proto_data(basename + ".bin", m.SerializeToString())
+            save_json_data(basename + ".json", to_json(m))
+            index += 1
 
 def generate_fixtures(directory):
     generate_single_value_fixtures(directory)

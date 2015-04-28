@@ -1,4 +1,5 @@
 import json
+from base64 import b64encode
 from google.protobuf.descriptor import FieldDescriptor as FD
 
 def to_json(msg):
@@ -11,7 +12,7 @@ def to_json(msg):
         elif field.type == FD.TYPE_STRING:
             cast_fun = unicode
         elif field.type == FD.TYPE_BYTES:
-            cast_fun = lambda x: x.encode('string_escape')
+            cast_fun = b64encode
         elif field.type == FD.TYPE_DOUBLE or field.type == FD.TYPE_FLOAT or field.type == FD.TYPE_FIXED32 or field.type == FD.TYPE_FIXED64 or field.type == FD.TYPE_SFIXED32 or field.type == FD.TYPE_SFIXED64:
             cast_fun = float
         elif field.type == FD.TYPE_INT64 or field.type == FD.TYPE_UINT64 or field.type == FD.TYPE_SINT64:
