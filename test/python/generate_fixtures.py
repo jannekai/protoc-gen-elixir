@@ -2,6 +2,7 @@
 import sys
 import os
 import base64
+from proto2json import to_json
 from proto.types_pb2 import Types
 from google.protobuf import text_format
 
@@ -54,6 +55,8 @@ def generate_single_value_fixtures(directory):
             m = Types()
             setattr(m, field, value)
             save_file(filename, m.SerializeToString())
+            to_json(m)
+
 
 def generate_fixtures(directory):
     generate_single_value_fixtures(directory)
