@@ -1,12 +1,11 @@
-import json
 from base64 import b64encode
 from google.protobuf.descriptor import FieldDescriptor as FD
 
-def to_json(msg):
-    js = {}
+def to_dict(msg):
+    result = {}
     for field, value in msg.ListFields():
         if field.type == FD.TYPE_MESSAGE:
-            cast_fun = to_json
+            cast_fun = to_dict
         elif field.type == FD.TYPE_BOOL:
             cast_fun = bool
         elif field.type == FD.TYPE_STRING:
@@ -22,13 +21,15 @@ def to_json(msg):
         else:
             raise Error("Unknow field type %s", field.type)
 
-        if field.label == FD.LABEL_REPEATED:
-            js_value = []
-            for v in value:
-                js_value.append(cast_fun(v))
-        else:
-            js_value = cast_fun(value)
+        result[field.name] = encode_value(field, value, cast_fun)
+    return result
 
-        js[field.name] = js_value
+def encode_value(field, value, fun):
+    if field.label == FD.LABEL_REPEATED:
+        encoded_value = []
+        for v in value:
+            encoded_value.append(fun(v))
+    else:
+        encoded_value = fun(value)
 
-    return json.dumps(js)
+    return encoded_value
