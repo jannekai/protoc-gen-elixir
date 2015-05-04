@@ -3,15 +3,15 @@ syntax = "proto3";
 package Test;
 
 message TypesMsg {
-	message NestedMsg {
-		int32 value = 1;
-	}
-
 	enum NestedEnum {
 		ZERO = 0;
 		ONE = 1;
 		TWO = 2;
 		NEG = -1;
+	}
+
+	message NestedMsg {
+		int32 value = 1;
 	}
 
 	// Singular fields
@@ -95,10 +95,9 @@ message TypesMsg {
 
 	// One of
 	oneof o_oneof {
-		uint32      oneof_uint32 = 100;
+		int32      	oneof_int32 = 100;
 		NestedMsg   oneof_nested_msg = 101;
 		string      oneof_string = 102;
-		bytes       oneof_bytes = 103;
 	}
 }
 
@@ -109,15 +108,35 @@ message ForeignMsg {
 	int32 value = 1;
 }
 
-// This proto includes a recusively nested message.
-message RecursiveMsg {
-	int32 value = 1;
-	RecursiveMsg child = 2;
-}
-
 enum ForeignEnum {
 	FOREIGN_ZERO = 0;
 	FOREIGN_FOUR = 4;
 	FOREIGN_FIVE = 5;
 	FOREIGN_NEG = -2;
+}
+
+// Verifying recursive messages
+message RecursiveMsg {
+	int32 value = 1;
+	RecursiveMsg child = 2;
+}
+
+// Code generation and testing for wrapped messages
+message OuterWrapperMsg {
+	enum OuterWrappedEnum {
+		ZERO = 0;
+		ONE = 1;
+	}
+	message OuterWrappedMsg {
+		string outer_wrapped_value = 1;
+	}
+	message InnerWrapper {
+		enum InnerWrappedEnum {
+			ZERO = 0;
+			ONE = 1;
+		}
+		message InnerWrappedMsg {
+			string inner_wrapped_value = 1;
+		}
+	}
 }

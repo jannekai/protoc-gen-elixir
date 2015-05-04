@@ -1,11 +1,11 @@
 from base64 import b64encode
 from google.protobuf.descriptor import FieldDescriptor as FD
 
-def to_dict(msg):
+def proto_to_dict(msg):
     result = {}
     for field, value in msg.ListFields():
         if field.type == FD.TYPE_MESSAGE:
-            cast_fun = to_dict
+            cast_fun = proto_to_dict
         elif field.type == FD.TYPE_BOOL:
             cast_fun = bool
         elif field.type == FD.TYPE_STRING:

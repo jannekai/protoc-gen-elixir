@@ -4,7 +4,7 @@ import os
 import base64
 import codecs
 import json
-from proto2dict import to_dict
+from proto2dict import proto_to_dict
 from proto.types_pb2 import TypesMsg, EmptyMsg, ForeignMsg, RecursiveMsg
 from google.protobuf import text_format
 from google.protobuf.descriptor import FieldDescriptor as FD
@@ -55,44 +55,64 @@ fields_32bit            = ["fixed32", "sfixed32", "float"]
 fields_all              = fields_varint + fields_64bit + fields_length_prefixed + fields_32bit;
 
 def to_json(m):
-    return json.dumps(to_dict(m))
+    return json.dumps(proto_to_dict(m))
 
-def save_proto_data(filename, data):
+def from_json(json):
+    print "Not implemented"
+
+def save_proto_fixture_binary(msg, filename):
     with open(filename, 'wb') as f:
-        f.write(data)
+        f.write(msg.SerializeToString())
 
-def save_json_data(filename, data):
+def save_proto_fixture_json(msg, filename):
     with open(filename, 'w') as f:
-        f.write(data)
+        f.write(to_json(msg))
+
+def save_proto_fixture(msg, basename):
+    save_proto_fixture_binary(msg, basename + ".bin")
+    save_proto_fixture_json(msg, basename + ".json")
+
+def set_field(msg, field, value):
+    if msg.DESCRIPTOR.fields_by_name[field].type == FD.TYPE_MESSAGE:
+        getattr(msg, field).CopyFrom(value)
+    else:
+        setattr(msg, field, value)
+
+def set_repeated_field(msg, field, value):
+    getattr(msg, field).extend(value)
 
 def generate_single_field_fixtures(directory):
     for type in fields_all:
         field = "f_" + type
         for index, value in enumerate(test_values[type]):
-            m = TypesMsg()
-            if m.DESCRIPTOR.fields_by_name[field].type == FD.TYPE_MESSAGE:
-                getattr(m, field).CopyFrom(value)
-            else:
-                setattr(m, field, value)
-
-            basename = directory + "/" + type + "_test_" + str(index)
-            save_proto_data(basename + ".bin", m.SerializeToString())
-            save_json_data(basename + ".json", to_json(m))
-            print to_json(m)
+            msg = TypesMsg()
+            set_field(msg, field, value)
+            save_proto_fixture(msg, directory + "/" + field + "_" + str(index))
 
 def generate_repeated_field_fixtures(directory):
     for type in fields_all:
         field = "r_" + type
-        m = TypesMsg()
-        getattr(m, field).extend(test_values[type])
-        print to_json(m)
+        msg = TypesMsg()
+        set_repeated_field(msg, field, test_values[type])
+        save_proto_fixture(msg, directory + "/" + field)
 
 def generate_fixtures(directory):
     generate_single_field_fixtures(directory)
     generate_repeated_field_fixtures(directory)
 
+def verify_fixture(binary, json):
+    msg = TypesMsg()
+    print json
+
 def verify_fixtures(directory):
-    print "Not implemented " + directory
+    for filename in os.listdir(directory):
+        if filename.endswith(".bin"):
+            (base, ext) = os.path.splitext(filename)
+            with open(directory + "/" + base + ".bin", "rb") as f:
+                msg = TypesMsg.ParseFromString(f.read())
+            with open(directory + "/" + base + ".json", "r") as f:
+                json = f.read()
+            verify_fixture(binary, json)
 
 if __name__ == '__main__':
     import argparse
