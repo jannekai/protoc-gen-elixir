@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import sys, os, base64, json, io
 from proto2dict import *
 from proto.types_pb2 import TypesMsg, EmptyMsg, ForeignMsg, RecursiveMsg
 from google.protobuf import text_format
 from google.protobuf.descriptor import FieldDescriptor as FD
+
 
 #
 # Test data
@@ -93,7 +95,11 @@ def generate_repeated_field_fixtures(directory):
         field = "r_" + type
         msg = TypesMsg()
         set_repeated_field(msg, field, test_values[type])
-        save_proto_fixture(msg, directory + "/" + field)
+        save_proto_fixture(msg, directory + "/" + field + "_0")
+
+        msg = TypesMsg()
+        set_repeated_field(msg, field, [])
+        save_proto_fixture(msg, directory + "/" + field + "_1")
 
 def generate_fixtures(directory):
     generate_single_field_fixtures(directory)
@@ -105,7 +111,6 @@ def generate_fixtures(directory):
 #
 
 def load_proto_fixture(basename):
-    print "Loading " + basename
     with open(basename + ".bin", "rb") as f:
         decoded = TypesMsg()
         decoded.ParseFromString(f.read())
@@ -114,11 +119,10 @@ def load_proto_fixture(basename):
     return (decoded, expected)
 
 def verify_fixture(testname, decoded, expected):
-    print "decoded:"
-    print decoded
-    print "expected:"
-    print expected
-    print ""
+    if decoded.SerializeToString() != expected.SerializeToString():
+        err("Test " + testname + " failed")
+        err("Decoded msg:  " + text_format.MessageToString(decoded, as_utf8=True, as_one_line=True))
+        err("Expected msg: " + text_format.MessageToString(expected, as_utf8=True, as_one_line=True))
 
 def verify_fixtures(directory):
     for filename in os.listdir(directory):
@@ -126,6 +130,13 @@ def verify_fixtures(directory):
             (basename, ext) = os.path.splitext(filename)
             (decoded, expected) = load_proto_fixture(directory + "/" + basename)
             verify_fixture(basename, decoded, expected)
+
+#
+# Error reporting
+#
+
+def err(*objs):
+    print("Error: ", *objs, file=sys.stderr)
 
 #
 # Main
