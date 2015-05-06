@@ -12,10 +12,10 @@ python/%_pb2.py: proto/%.proto
 	@protoc --proto_path=proto --python_out=python/proto $<
 
 fixtures:
-	@python python/generate_fixtures.py --dir fixtures generate
+	@python python/fixtures.py --dir fixtures generate
 
 verify:
-	@python python/generate_fixtures.py --dir fixtures verify
+	@python python/fixtures.py --dir fixtures verify
 
 #generate-elixir:
 #protoc --proto_path=data --plugin=protoc-gen-elixir=../plugin/protoc-gen-elixir --elixir_out=elixir data/proto3.proto

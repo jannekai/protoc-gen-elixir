@@ -1,35 +1,72 @@
-from base64 import b64encode
+# -*- coding: utf-8 -*-
+from base64 import b64encode, b64decode
 from google.protobuf.descriptor import FieldDescriptor as FD
 
 def proto_to_dict(msg):
     result = {}
-    for field, value in msg.ListFields():
-        if field.type == FD.TYPE_MESSAGE:
-            cast_fun = proto_to_dict
-        elif field.type == FD.TYPE_BOOL:
-            cast_fun = bool
-        elif field.type == FD.TYPE_STRING:
-            cast_fun = unicode
-        elif field.type == FD.TYPE_BYTES:
-            cast_fun = b64encode
-        elif field.type == FD.TYPE_DOUBLE or field.type == FD.TYPE_FLOAT or field.type == FD.TYPE_FIXED32 or field.type == FD.TYPE_FIXED64 or field.type == FD.TYPE_SFIXED32 or field.type == FD.TYPE_SFIXED64:
-            cast_fun = float
-        elif field.type == FD.TYPE_INT64 or field.type == FD.TYPE_UINT64 or field.type == FD.TYPE_SINT64:
-            cast_fun = long
-        elif field.type == FD.TYPE_INT32 or field.type == FD.TYPE_UINT32 or field.type == FD.TYPE_SINT32 or field.type == FD.TYPE_ENUM:
-            cast_fun = int
-        else:
-            raise Error("Unknow field type %s", field.type)
-
-        result[field.name] = encode_value(field, value, cast_fun)
+    for fd, value in msg.ListFields():
+        func = encode_func(fd)
+        result[fd.name] = encode_value(fd, value, func)
     return result
 
-def encode_value(field, value, fun):
-    if field.label == FD.LABEL_REPEATED:
+def encode_func(fd):
+    if fd.type == FD.TYPE_MESSAGE:
+        func = proto_to_dict
+    elif fd.type == FD.TYPE_BOOL:
+        func = bool
+    elif fd.type == FD.TYPE_STRING:
+        func = unicode
+    elif fd.type == FD.TYPE_BYTES:
+        func = b64encode
+    elif fd.type == FD.TYPE_DOUBLE or fd.type == FD.TYPE_FLOAT:
+        func = float
+    elif fd.type == FD.TYPE_INT32 or fd.type == FD.TYPE_UINT32 or fd.type == FD.TYPE_SINT32 or fd.type == FD.TYPE_ENUM:
+        func = int
+    elif fd.type == FD.TYPE_INT64 or fd.type == FD.TYPE_UINT64 or fd.type == FD.TYPE_SINT64 or fd.type == FD.TYPE_FIXED32 or fd.type == FD.TYPE_FIXED64 or fd.type == FD.TYPE_SFIXED32 or fd.type == FD.TYPE_SFIXED64:
+        func = long
+    else:
+        raise Error("Unknow field type %s", fd.type)
+    return func
+
+def encode_value(fd, value, encode_func):
+    if fd.label == FD.LABEL_REPEATED:
         encoded_value = []
         for v in value:
-            encoded_value.append(fun(v))
+            encoded_value.append(encode_func(v))
     else:
-        encoded_value = fun(value)
+        encoded_value = encode_func(value)
 
     return encoded_value
+
+
+def dict_to_proto(dictionary, msg):
+    for key, value in dictionary.iteritems():
+        field = str(key)
+        if isinstance(value, dict):
+            dict_to_proto(value, getattr(msg, field))
+        elif isinstance(value, list):
+            decode_list(value, getattr(msg, field), msg.DESCRIPTOR.fields_by_name[field])
+        else:
+            setattr(msg, field, decode_value(value, msg.DESCRIPTOR.fields_by_name[field]))
+    return msg
+
+def decode_list(values, field, fd):
+    if isinstance(values[0], dict):
+        for v in values:
+            dict_to_proto(v, field.add())
+    else:
+        for v in values:
+            field.append(decode_value(v, fd))
+
+def decode_value(value, fd):
+    if fd.type == FD.TYPE_BYTES:
+        return b64decode(value)
+    if fd.type == FD.TYPE_BOOL:
+        return bool(value)
+    if fd.type == FD.TYPE_INT32 or fd.type == FD.TYPE_UINT32 or fd.type == FD.TYPE_SINT32 or fd.type == FD.TYPE_ENUM:
+        return int(value)
+    if fd.type == FD.TYPE_INT64 or fd.type == FD.TYPE_UINT64 or fd.type == FD.TYPE_SINT64 or fd.type == FD.TYPE_FIXED32 or fd.type == FD.TYPE_FIXED64 or fd.type == FD.TYPE_SFIXED32 or fd.type == FD.TYPE_SFIXED64:
+        return long(value)
+
+    return value
+

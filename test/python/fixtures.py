@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import sys
-import os
-import base64
-import codecs
-import json
-from proto2dict import proto_to_dict
+import sys, os, base64, json, io
+from proto2dict import *
 from proto.types_pb2 import TypesMsg, EmptyMsg, ForeignMsg, RecursiveMsg
 from google.protobuf import text_format
 from google.protobuf.descriptor import FieldDescriptor as FD
+
+#
+# Test data
+#
 
 nestedMsgDefault = TypesMsg.NestedMsg()
 nestedMsgOne = TypesMsg.NestedMsg()
@@ -39,8 +39,8 @@ test_values = {
     "sfixed64":     [ -2**63,   2**63-1,    0, -1, 1],
     "double":       [ -1.0,     1.0,        0.0],
     "fixed32":      [ 0,        2**32-1,    1],
-    "string":       [ "",       "foo",      "ᚠᛇᚻ᛫ᛒᛦᚦ᛫ᚠᚱᚩᚠᚢᚱ᛫ᚠᛁᚱᚪ᛫ᚷᛖᚻᚹᛦᛚᚳᚢᛗ"],
-    "bytes":        [ str(bytearray([1,2,3,4,0,255]))],
+    "string":       [ "",       "foo",      u"ᚠᛇᚻ᛫ᛒᛦᚦ᛫ᚠᚱᚩᚠᚢᚱ᛫ᚠᛁᚱᚪ᛫ᚷᛖᚻᚹᛦᛚᚳᚢᛗ"],
+    "bytes":        [ str(bytearray([65,66,67,68])), str(bytearray([255,128,64,32,16,8,4,2,1,0]))],
     "nested_msg":   [ nestedMsgDefault,     nestedMsgOne],
     "foreign_msg":  [ foreignMsgDefault,    foreignMsgOne],
     "empty_msg":    [ emptyMsg,             emptyMsg ],
@@ -54,19 +54,18 @@ fields_length_prefixed  = ["string", "bytes", "nested_msg", "foreign_msg", "empt
 fields_32bit            = ["fixed32", "sfixed32", "float"]
 fields_all              = fields_varint + fields_64bit + fields_length_prefixed + fields_32bit;
 
-def to_json(m):
-    return json.dumps(proto_to_dict(m))
-
-def from_json(json):
-    print "Not implemented"
+#
+# Generate test fixtures
+#
 
 def save_proto_fixture_binary(msg, filename):
     with open(filename, 'wb') as f:
         f.write(msg.SerializeToString())
 
 def save_proto_fixture_json(msg, filename):
-    with open(filename, 'w') as f:
-        f.write(to_json(msg))
+    with io.open(filename, 'w', encoding='utf-8') as f:
+        data = json.dumps(proto_to_dict(msg), ensure_ascii=False)
+        f.write(unicode(data))
 
 def save_proto_fixture(msg, basename):
     save_proto_fixture_binary(msg, basename + ".bin")
@@ -100,19 +99,37 @@ def generate_fixtures(directory):
     generate_single_field_fixtures(directory)
     generate_repeated_field_fixtures(directory)
 
-def verify_fixture(binary, json):
-    msg = TypesMsg()
-    print json
+
+#
+# Verify generated fixtures
+#
+
+def load_proto_fixture(basename):
+    print "Loading " + basename
+    with open(basename + ".bin", "rb") as f:
+        decoded = TypesMsg()
+        decoded.ParseFromString(f.read())
+    with open(basename + ".json", "r") as f:
+        expected = dict_to_proto(json.load(f), TypesMsg())
+    return (decoded, expected)
+
+def verify_fixture(testname, decoded, expected):
+    print "decoded:"
+    print decoded
+    print "expected:"
+    print expected
+    print ""
 
 def verify_fixtures(directory):
     for filename in os.listdir(directory):
         if filename.endswith(".bin"):
-            (base, ext) = os.path.splitext(filename)
-            with open(directory + "/" + base + ".bin", "rb") as f:
-                msg = TypesMsg.ParseFromString(f.read())
-            with open(directory + "/" + base + ".json", "r") as f:
-                json = f.read()
-            verify_fixture(binary, json)
+            (basename, ext) = os.path.splitext(filename)
+            (decoded, expected) = load_proto_fixture(directory + "/" + basename)
+            verify_fixture(basename, decoded, expected)
+
+#
+# Main
+#
 
 if __name__ == '__main__':
     import argparse
