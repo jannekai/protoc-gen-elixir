@@ -5,8 +5,7 @@ from google.protobuf.descriptor import FieldDescriptor as FD
 def proto_to_dict(msg):
     result = {}
     for fd, value in msg.ListFields():
-        func = encode_func(fd)
-        result[fd.name] = encode_value(fd, value, func)
+        result[fd.name] = encode_value(fd, value, encode_func(fd))
     return result
 
 def encode_func(fd):
@@ -25,7 +24,7 @@ def encode_func(fd):
     elif fd.type == FD.TYPE_INT64 or fd.type == FD.TYPE_UINT64 or fd.type == FD.TYPE_SINT64 or fd.type == FD.TYPE_FIXED32 or fd.type == FD.TYPE_FIXED64 or fd.type == FD.TYPE_SFIXED32 or fd.type == FD.TYPE_SFIXED64:
         func = long
     else:
-        raise Error("Unknow field type %s", fd.type)
+        raise Error("Unknown field type %s", fd.type)
     return func
 
 def encode_value(fd, value, encode_func):
@@ -40,15 +39,22 @@ def encode_value(fd, value, encode_func):
 
 
 def dict_to_proto(dictionary, msg):
+    decode_msg(dictionary, msg)
+    return msg
+
+def decode_msg(dictionary, msg):
+    msg.SetInParent()
     for key, value in dictionary.iteritems():
+        if value is None:
+            continue
+
         field = str(key)
         if isinstance(value, dict):
-            dict_to_proto(value, getattr(msg, field))
+            decode_msg(value, getattr(msg, field))
         elif isinstance(value, list):
             decode_list(value, getattr(msg, field), msg.DESCRIPTOR.fields_by_name[field])
         else:
             setattr(msg, field, decode_value(value, msg.DESCRIPTOR.fields_by_name[field]))
-    return msg
 
 def decode_list(values, field, fd):
     if isinstance(values[0], dict):
@@ -69,4 +75,3 @@ def decode_value(value, fd):
         return long(value)
 
     return value
-
