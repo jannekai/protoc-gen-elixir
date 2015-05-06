@@ -14,90 +14,99 @@ message TypesMsg {
 		int32 value = 1;
 	}
 
-	// Singular fields
-	int32           f_int32             =  1;
-	int64           f_int64             =  2;
-	uint32          f_uint32            =  3;
-	uint64          f_uint64            =  4;
-	sint32          f_sint32            =  5;
-	sint64          f_sint64            =  6;
-	fixed32         f_fixed32           =  7;
-	fixed64         f_fixed64           =  8;
-	sfixed32        f_sfixed32          =  9;
-	sfixed64        f_sfixed64          = 10;
-	float           f_float             = 11;
-	double          f_double            = 12;
-	bool            f_bool              = 13;
-	string          f_string            = 14;
-	bytes           f_bytes             = 15;
-	NestedMsg       f_nested_msg        = 16;
-	ForeignMsg      f_foreign_msg       = 17;
-	EmptyMsg        f_empty_msg         = 18;
-	NestedEnum      f_nested_enum       = 19;
-	ForeignEnum     f_foreign_enum      = 20;
+	// Singular fields, grouped by wiretype
+	int32           				f_int32             	=  1;
+	sint32          				f_sint32            	=  2;
+	uint32          				f_uint32            	=  3;
+	int64           				f_int64             	=  4;
+	sint64          				f_sint64            	=  5;
+	uint64          				f_uint64            	=  6;
+	bool            				f_bool              	=  7;
+	NestedEnum      				f_nested_enum       	=  8;
+	ForeignEnum     				f_foreign_enum      	=  9;
+	fixed64         				f_fixed64           	= 10;
+	sfixed64        				f_sfixed64          	= 11;
+	double          				f_double            	= 12;
+	string          				f_string            	= 13;
+	bytes           				f_bytes             	= 14;
+	NestedMsg       				f_nested_msg        	= 15;
+	ForeignMsg      				f_foreign_msg       	= 16;
+	EmptyMsg        				f_empty_msg         	= 17;
+	fixed32         				f_fixed32           	= 18;
+	sfixed32        				f_sfixed32          	= 19;
+	float           				f_float             	= 20;
 
 	// Repeated fields
-	repeated int32              r_int32             = 30;
-	repeated int64              r_int64             = 31;
-	repeated uint32             r_uint32            = 32;
-	repeated uint64             r_uint64            = 33;
-	repeated sint32             r_sint32            = 34;
-	repeated sint64             r_sint64            = 35;
-	repeated fixed32            r_fixed32           = 36;
-	repeated fixed64            r_fixed64           = 37;
-	repeated sfixed32           r_sfixed32          = 38;
-	repeated sfixed64           r_sfixed64          = 39;
-	repeated float              r_float             = 40;
-	repeated double             r_double            = 41;
-	repeated bool               r_bool              = 42;
-	repeated string             r_string            = 43;
-	repeated bytes              r_bytes             = 44;
-	repeated NestedMsg          r_nested_msg        = 45;
-	repeated ForeignMsg         r_foreign_msg       = 46;
-	repeated EmptyMsg           r_empty_msg         = 47;
-	repeated NestedEnum         r_nested_enum       = 48;
-	repeated ForeignEnum        r_foreign_enum      = 49;
+	repeated int32              	r_int32             	= 31;
+	repeated sint32             	r_sint32            	= 32;
+	repeated uint32             	r_uint32            	= 33;
+	repeated int64              	r_int64             	= 34;
+	repeated sint64             	r_sint64            	= 35;
+	repeated uint64             	r_uint64            	= 36;
+	repeated bool               	r_bool              	= 37;
+	repeated NestedEnum         	r_nested_enum       	= 38;
+	repeated ForeignEnum        	r_foreign_enum      	= 39;
+	repeated fixed64            	r_fixed64           	= 40;
+	repeated sfixed64           	r_sfixed64          	= 41;
+	repeated double             	r_double            	= 42;
+	repeated string             	r_string            	= 43;
+	repeated bytes              	r_bytes             	= 44;
+	repeated NestedMsg          	r_nested_msg        	= 45;
+	repeated ForeignMsg         	r_foreign_msg       	= 46;
+	repeated EmptyMsg           	r_empty_msg         	= 47;
+	repeated fixed32            	r_fixed32           	= 48;
+	repeated sfixed32           	r_sfixed32          	= 49;
+	repeated float              	r_float             	= 50;
 
 	// Repeated packed fields
-	repeated int32              p_int32             = 50 [packed = true];
-	repeated int64              p_int64             = 51 [packed = true];
-	repeated uint32             p_uint32            = 52 [packed = true];
-	repeated uint64             p_uint64            = 53 [packed = true];
-	repeated sint32             p_sint32            = 54 [packed = true];
-	repeated sint64             p_sint64            = 55 [packed = true];
-	repeated fixed32            p_fixed32           = 56 [packed = true];
-	repeated fixed64            p_fixed64           = 57 [packed = true];
-	repeated sfixed32           p_sfixed32          = 58 [packed = true];
-	repeated sfixed64           p_sfixed64          = 59 [packed = true];
-	repeated float              p_float             = 60 [packed = true];
-	repeated double             p_double            = 61 [packed = true];
-	repeated bool               p_bool              = 62 [packed = true];
-	repeated ForeignEnum        p_foreign_enum      = 63 [packed = true];
+	repeated int32              	p_int32             	= 61 [packed = true];
+	repeated sint32             	p_sint32            	= 62 [packed = true];
+	repeated uint32             	p_uint32            	= 63 [packed = true];
+	repeated int64              	p_int64             	= 64 [packed = true];
+	repeated sint64             	p_sint64            	= 65 [packed = true];
+	repeated uint64             	p_uint64            	= 66 [packed = true];
+	repeated bool               	p_bool              	= 67 [packed = true];
+	repeated NestedEnum         	p_nested_enum       	= 68 [packed = true];
+	repeated ForeignEnum        	p_foreign_enum      	= 69 [packed = true];
+	repeated fixed64            	p_fixed64           	= 70 [packed = true];
+	repeated sfixed64           	p_sfixed64          	= 71 [packed = true];
+	repeated double             	p_double            	= 72 [packed = true];
+
+	// No packing for non-primitive fields
+	// repeated string             	p_string            	= 73 [packed = true];
+	// repeated bytes              	p_bytes             	= 74 [packed = true];
+	// repeated NestedMsg          	p_nested_msg        	= 75 [packed = true];
+	// repeated ForeignMsg         	p_foreign_msg       	= 76 [packed = true];
+	// repeated EmptyMsg           	p_empty_msg         	= 77 [packed = true];
+
+	repeated fixed32            	p_fixed32           	= 78 [packed = true];
+	repeated sfixed32           	p_sfixed32          	= 79 [packed = true];
+	repeated float              	p_float             	= 80 [packed = true];
 
 	// Maps
-	map<int32,      int32>          m_int32_int32           = 80;
-	map<int64,      int64>          m_int64_int64           = 81;
-	map<uint32,     uint32>         m_uint32_uint32         = 82;
-	map<uint64,     uint64>         m_uint64_uint64         = 83;
-	map<sint32,     sint32>         m_sint32_sint32         = 84;
-	map<sint64,     sint64>         m_sint64_sint64         = 85;
-	map<fixed32,    fixed32>        m_fixed32_fixed32       = 86;
-	map<fixed64,    fixed64>        m_fixed64_fixed64       = 87;
-	map<sfixed32,   sfixed32>       m_sfixed32_sfixed32     = 88;
-	map<sfixed64,   sfixed64>       m_sfixed64_sfixed64     = 89;
-	map<int32,      float>          m_int32_float           = 90;
-	map<int32,      double>         m_int32_double          = 91;
-	map<bool,       bool>           m_bool_bool             = 92;
-	map<string,     string>         m_string_string         = 93;
-	map<int32,      bytes>          m_int32_bytes           = 94;
-	map<int32,      ForeignEnum>    m_int32_foreign_enum    = 95;
-	map<int32,      ForeignMsg>     m_int32_foreign_msg     = 96;
+	map<int32,      int32>          m_int32_int32           = 101;
+	map<sint32,     sint32>         m_sint32_sint32         = 102;
+	map<uint32,     uint32>         m_uint32_uint32         = 103;
+	map<int64,      int64>          m_int64_int64           = 104;
+	map<sint64,     sint64>         m_sint64_sint64         = 105;
+	map<uint64,     uint64>         m_uint64_uint64         = 106;
+	map<bool,       bool>           m_bool_bool             = 107;
+	map<fixed64,    fixed64>        m_fixed64_fixed64       = 108;
+	map<sfixed64,   sfixed64>       m_sfixed64_sfixed64     = 109;
+	map<string,     string>         m_string_string         = 110;
+	map<fixed32,    fixed32>        m_fixed32_fixed32       = 111;
+	map<sfixed32,   sfixed32>       m_sfixed32_sfixed32     = 112;
+	map<int32,      float>          m_int32_float           = 113;
+	map<int32,      double>         m_int32_double          = 114;
+	map<int32,      bytes>          m_int32_bytes           = 115;
+	map<int32,      ForeignEnum>    m_int32_foreign_enum    = 116;
+	map<int32,      ForeignMsg>     m_int32_foreign_msg     = 117;
 
 	// One of
-	oneof o_oneof {
-		int32      	oneof_int32 = 100;
-		NestedMsg   oneof_nested_msg = 101;
-		string      oneof_string = 102;
+	oneof f_oneof {
+		int32      	oneof_int32 = 130;
+		NestedMsg   oneof_nested_msg = 131;
+		string      oneof_string = 132;
 	}
 }
 
