@@ -17,33 +17,26 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='import.proto',
-  package='Imported',
+  package='Import',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cimport.proto\x12\x08Imported\"?\n\x0bMsgImported\x12\x17\n\x0foptional_string\x18\x01 \x01(\t\x12\x17\n\x0frepeated_string\x18\x02 \x03(\tb\x06proto3')
+  serialized_pb=_b('\n\x0cimport.proto\x12\x06Import\"\x1c\n\x0bImportedMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
-_MSGIMPORTED = _descriptor.Descriptor(
-  name='MsgImported',
-  full_name='Imported.MsgImported',
+_IMPORTEDMSG = _descriptor.Descriptor(
+  name='ImportedMsg',
+  full_name='Import.ImportedMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='optional_string', full_name='Imported.MsgImported.optional_string', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='repeated_string', full_name='Imported.MsgImported.repeated_string', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='value', full_name='Import.ImportedMsg.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -59,18 +52,18 @@ _MSGIMPORTED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26,
-  serialized_end=89,
+  serialized_start=24,
+  serialized_end=52,
 )
 
-DESCRIPTOR.message_types_by_name['MsgImported'] = _MSGIMPORTED
+DESCRIPTOR.message_types_by_name['ImportedMsg'] = _IMPORTEDMSG
 
-MsgImported = _reflection.GeneratedProtocolMessageType('MsgImported', (_message.Message,), dict(
-  DESCRIPTOR = _MSGIMPORTED,
+ImportedMsg = _reflection.GeneratedProtocolMessageType('ImportedMsg', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTEDMSG,
   __module__ = 'import_pb2'
-  # @@protoc_insertion_point(class_scope:Imported.MsgImported)
+  # @@protoc_insertion_point(class_scope:Import.ImportedMsg)
   ))
-_sym_db.RegisterMessage(MsgImported)
+_sym_db.RegisterMessage(ImportedMsg)
 
 
 # @@protoc_insertion_point(module_scope)

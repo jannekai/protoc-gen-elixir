@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package Test;
 
+import "import.proto";
+
 message TypesMsg {
 	enum NestedEnum {
 		ZERO = 0;
@@ -32,9 +34,10 @@ message TypesMsg {
 	NestedMsg       				f_nested_msg        	= 15;
 	ForeignMsg      				f_foreign_msg       	= 16;
 	EmptyMsg        				f_empty_msg         	= 17;
-	fixed32         				f_fixed32           	= 18;
-	sfixed32        				f_sfixed32          	= 19;
-	float           				f_float             	= 20;
+	Import.ImportedMsg				f_imported_msg			= 18;
+	fixed32         				f_fixed32           	= 19;
+	sfixed32        				f_sfixed32          	= 20;
+	float           				f_float             	= 21;
 
 	// Repeated fields
 	repeated int32              	r_int32             	= 31;
@@ -54,9 +57,10 @@ message TypesMsg {
 	repeated NestedMsg          	r_nested_msg        	= 45;
 	repeated ForeignMsg         	r_foreign_msg       	= 46;
 	repeated EmptyMsg           	r_empty_msg         	= 47;
-	repeated fixed32            	r_fixed32           	= 48;
-	repeated sfixed32           	r_sfixed32          	= 49;
-	repeated float              	r_float             	= 50;
+	repeated Import.ImportedMsg 	r_imported_msg			= 48;
+	repeated fixed32            	r_fixed32           	= 49;
+	repeated sfixed32           	r_sfixed32          	= 50;
+	repeated float              	r_float             	= 51;
 
 	// Repeated packed fields
 	repeated int32              	p_int32             	= 61 [packed = true];
@@ -104,10 +108,22 @@ message TypesMsg {
 
 	// One of
 	oneof f_oneof {
-		int32      	oneof_int32 = 130;
-		NestedMsg   oneof_nested_msg = 131;
-		string      oneof_string = 132;
+		int32      	oneof_int32 		= 130;
+		string      oneof_string 		= 131;
+		NestedMsg   oneof_nested_msg 	= 132;
 	}
+
+	// Nested messages and enumes
+	Outer.OuterEnum 		outer_enum 	= 201;
+	Outer.OuterMsg  		outer_msg 	= 202;
+	Outer.Inner.InnerEnum 	inner_enum 	= 203;
+	Outer.Inner.InnerMsg 	inner_msg 	= 204;
+
+	// Nested recursion
+	RecursiveMsg recursive_msg = 251;
+
+	// Out there
+	int32 max_tag = 536870911;
 }
 
 message EmptyMsg {
@@ -130,22 +146,27 @@ message RecursiveMsg {
 	RecursiveMsg child = 2;
 }
 
-// Code generation and testing for wrapped messages
-message OuterWrapperMsg {
-	enum OuterWrappedEnum {
+// Nested messages and enumerations
+message Outer {
+	enum OuterEnum {
 		ZERO = 0;
 		ONE = 1;
 	}
-	message OuterWrappedMsg {
-		string outer_wrapped_value = 1;
+	message OuterMsg {
+		int32 value = 1;
+		OuterEnum enum = 2;
+		Inner.InnerMsg inner_msg = 3;
 	}
-	message InnerWrapper {
-		enum InnerWrappedEnum {
+
+	message Inner {
+		enum InnerEnum {
 			ZERO = 0;
 			ONE = 1;
 		}
-		message InnerWrappedMsg {
-			string inner_wrapped_value = 1;
+		message InnerMsg {
+			int32 value = 1;
+			InnerEnum enum = 2;
+			OuterMsg outer_msg = 3;
 		}
 	}
 }

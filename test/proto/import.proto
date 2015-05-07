@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-package Imported;
+package Import;
 
-message MsgImported {
-	optional string optional_string = 1;
-	repeated string repeated_string = 2;
+message ImportedMsg {
+	int32 value = 1;
 }
