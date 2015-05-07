@@ -48,7 +48,7 @@ test_values = {
     "sfixed32":             [ -2**31,   2**31-1,    0,      -1,     1 ],
     "float":                [ -1.0,     1.0,        0.0 ],
 
-    "m_int32_int32":        [ (-2**31, -2**31),     (2**31-1, 2**31-1),     (0, 0),     (-1, -1),   (1, 1) ],
+    "m_int32_int32":        [ (-2**31, -2**31),     (2**31-1, 2**31-1),     (0, 0),     (-1, -1),   (1, 1),     (1, 1),     (0, 1) ],
     "m_sint32_sint32":      [ (-2**31, -2**31),     (2**31-1, 2**31-1),     (0, 0),     (-1, -1),   (1, 1) ],
     "m_uint32_uint32":      [ (0, 0),               (2**32-1, 2**32-1),     (1, 1) ],
     "m_int64_int64":        [ (-2**63L, -2**63L),   (2**63-1, 2**63-1),     (0, 0),     (-1, -1),   (1, 1) ],
@@ -138,12 +138,16 @@ def generate_repeated_field_fixtures(directory):
 def generate_map_fixtures(directory):
     for field in fields_maps:
         msg = TypesMsg()
+        for k,v in test_values[field]:
+            f = getattr(msg, field).add()
+            set_field(f, "key", k)
+            set_field(f, "value", v)
+        save_proto_fixture(msg, directory + "/" + field)
 
 def generate_fixtures(directory):
     generate_single_field_fixtures(directory)
     generate_repeated_field_fixtures(directory)
     generate_map_fixtures(directory)
-
 
 #
 # Verify generated fixtures
@@ -160,8 +164,8 @@ def load_proto_fixture(basename):
 def verify_fixture(testname, decoded, expected):
     if decoded.SerializeToString() != expected.SerializeToString():
         err("Test " + testname + " failed")
-        err("Decoded msg:  " + text_format.MessageToString(decoded, as_utf8=True, as_one_line=True))
-        err("Expected msg: " + text_format.MessageToString(expected, as_utf8=True, as_one_line=True))
+        err("Decoded msg:  " + to_str(decoded))
+        err("Expected msg: " + to_str(expected))
 
 def verify_fixtures(directory):
     for filename in os.listdir(directory):
@@ -177,6 +181,8 @@ def verify_fixtures(directory):
 def err(*objs):
     print("Error: ", *objs, file=sys.stderr)
 
+def to_str(msg):
+    return text_format.MessageToString(msg, as_utf8=True, as_one_line=True)
 #
 # Main
 #
