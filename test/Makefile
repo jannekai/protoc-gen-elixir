@@ -17,7 +17,7 @@ fixtures:
 verify:
 	@python python/fixtures.py --dir fixtures verify
 
-#generate-elixir:
-#protoc --proto_path=data --plugin=protoc-gen-elixir=../plugin/protoc-gen-elixir --elixir_out=elixir data/proto3.proto
+elixir:
+	protoc --proto_path=proto --plugin=protoc-gen-elixir=../plugin/protoc-gen-elixir --elixir_out=elixir proto/types.proto proto/another.proto
 
-.PHONY: clean fixtures
+.PHONY: clean fixtures elixir
