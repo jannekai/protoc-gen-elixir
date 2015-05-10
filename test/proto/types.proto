@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package test.msg;
+package test.types;
 
 import "import.proto";
 

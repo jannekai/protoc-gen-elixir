@@ -19,16 +19,16 @@ import import_pb2 as import__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='types.proto',
-  package='Test',
+  package='test.types',
   syntax='proto3',
-  serialized_pb=_b('\n\x0btypes.proto\x12\x04Test\x1a\x0cimport.proto\"\xc9\x1e\n\x08TypesMsg\x12\x0f\n\x07\x66_int32\x18\x01 \x01(\x05\x12\x10\n\x08\x66_sint32\x18\x02 \x01(\x11\x12\x10\n\x08\x66_uint32\x18\x03 \x01(\r\x12\x0f\n\x07\x66_int64\x18\x04 \x01(\x03\x12\x10\n\x08\x66_sint64\x18\x05 \x01(\x12\x12\x10\n\x08\x66_uint64\x18\x06 \x01(\x04\x12\x0e\n\x06\x66_bool\x18\x07 \x01(\x08\x12\x30\n\rf_nested_enum\x18\x08 \x01(\x0e\x32\x19.Test.TypesMsg.NestedEnum\x12)\n\x0e\x66_foreign_enum\x18\t \x01(\x0e\x32\x11.Test.ForeignEnum\x12\x11\n\tf_fixed64\x18\n \x01(\x06\x12\x12\n\nf_sfixed64\x18\x0b \x01(\x10\x12\x10\n\x08\x66_double\x18\x0c \x01(\x01\x12\x10\n\x08\x66_string\x18\r \x01(\t\x12\x0f\n\x07\x66_bytes\x18\x0e \x01(\x0c\x12.\n\x0c\x66_nested_msg\x18\x0f \x01(\x0b\x32\x18.Test.TypesMsg.NestedMsg\x12\'\n\rf_foreign_msg\x18\x10 \x01(\x0b\x32\x10.Test.ForeignMsg\x12#\n\x0b\x66_empty_msg\x18\x11 \x01(\x0b\x32\x0e.Test.EmptyMsg\x12+\n\x0e\x66_imported_msg\x18\x12 \x01(\x0b\x32\x13.Import.ImportedMsg\x12\x11\n\tf_fixed32\x18\x13 \x01(\x07\x12\x12\n\nf_sfixed32\x18\x14 \x01(\x0f\x12\x0f\n\x07\x66_float\x18\x15 \x01(\x02\x12\x0f\n\x07r_int32\x18\x1f \x03(\x05\x12\x10\n\x08r_sint32\x18  \x03(\x11\x12\x10\n\x08r_uint32\x18! \x03(\r\x12\x0f\n\x07r_int64\x18\" \x03(\x03\x12\x10\n\x08r_sint64\x18# \x03(\x12\x12\x10\n\x08r_uint64\x18$ \x03(\x04\x12\x0e\n\x06r_bool\x18% \x03(\x08\x12\x30\n\rr_nested_enum\x18& \x03(\x0e\x32\x19.Test.TypesMsg.NestedEnum\x12)\n\x0er_foreign_enum\x18\' \x03(\x0e\x32\x11.Test.ForeignEnum\x12\x11\n\tr_fixed64\x18( \x03(\x06\x12\x12\n\nr_sfixed64\x18) \x03(\x10\x12\x10\n\x08r_double\x18* \x03(\x01\x12\x10\n\x08r_string\x18+ \x03(\t\x12\x0f\n\x07r_bytes\x18, \x03(\x0c\x12.\n\x0cr_nested_msg\x18- \x03(\x0b\x32\x18.Test.TypesMsg.NestedMsg\x12\'\n\rr_foreign_msg\x18. \x03(\x0b\x32\x10.Test.ForeignMsg\x12#\n\x0br_empty_msg\x18/ \x03(\x0b\x32\x0e.Test.EmptyMsg\x12+\n\x0er_imported_msg\x18\x30 \x03(\x0b\x32\x13.Import.ImportedMsg\x12\x11\n\tr_fixed32\x18\x31 \x03(\x07\x12\x12\n\nr_sfixed32\x18\x32 \x03(\x0f\x12\x0f\n\x07r_float\x18\x33 \x03(\x02\x12\x13\n\x07p_int32\x18= \x03(\x05\x42\x02\x10\x01\x12\x14\n\x08p_sint32\x18> \x03(\x11\x42\x02\x10\x01\x12\x14\n\x08p_uint32\x18? \x03(\rB\x02\x10\x01\x12\x13\n\x07p_int64\x18@ \x03(\x03\x42\x02\x10\x01\x12\x14\n\x08p_sint64\x18\x41 \x03(\x12\x42\x02\x10\x01\x12\x14\n\x08p_uint64\x18\x42 \x03(\x04\x42\x02\x10\x01\x12\x12\n\x06p_bool\x18\x43 \x03(\x08\x42\x02\x10\x01\x12\x34\n\rp_nested_enum\x18\x44 \x03(\x0e\x32\x19.Test.TypesMsg.NestedEnumB\x02\x10\x01\x12-\n\x0ep_foreign_enum\x18\x45 \x03(\x0e\x32\x11.Test.ForeignEnumB\x02\x10\x01\x12\x15\n\tp_fixed64\x18\x46 \x03(\x06\x42\x02\x10\x01\x12\x16\n\np_sfixed64\x18G \x03(\x10\x42\x02\x10\x01\x12\x14\n\x08p_double\x18H \x03(\x01\x42\x02\x10\x01\x12\x15\n\tp_fixed32\x18N \x03(\x07\x42\x02\x10\x01\x12\x16\n\np_sfixed32\x18O \x03(\x0f\x42\x02\x10\x01\x12\x13\n\x07p_float\x18P \x03(\x02\x42\x02\x10\x01\x12\x36\n\rm_int32_int32\x18\x65 \x03(\x0b\x32\x1f.Test.TypesMsg.MInt32Int32Entry\x12:\n\x0fm_sint32_sint32\x18\x66 \x03(\x0b\x32!.Test.TypesMsg.MSint32Sint32Entry\x12:\n\x0fm_uint32_uint32\x18g \x03(\x0b\x32!.Test.TypesMsg.MUint32Uint32Entry\x12\x36\n\rm_int64_int64\x18h \x03(\x0b\x32\x1f.Test.TypesMsg.MInt64Int64Entry\x12:\n\x0fm_sint64_sint64\x18i \x03(\x0b\x32!.Test.TypesMsg.MSint64Sint64Entry\x12:\n\x0fm_uint64_uint64\x18j \x03(\x0b\x32!.Test.TypesMsg.MUint64Uint64Entry\x12\x32\n\x0bm_bool_bool\x18k \x03(\x0b\x32\x1d.Test.TypesMsg.MBoolBoolEntry\x12>\n\x11m_fixed64_fixed64\x18l \x03(\x0b\x32#.Test.TypesMsg.MFixed64Fixed64Entry\x12\x42\n\x13m_sfixed64_sfixed64\x18m \x03(\x0b\x32%.Test.TypesMsg.MSfixed64Sfixed64Entry\x12:\n\x0fm_string_string\x18n \x03(\x0b\x32!.Test.TypesMsg.MStringStringEntry\x12>\n\x11m_fixed32_fixed32\x18o \x03(\x0b\x32#.Test.TypesMsg.MFixed32Fixed32Entry\x12\x42\n\x13m_sfixed32_sfixed32\x18p \x03(\x0b\x32%.Test.TypesMsg.MSfixed32Sfixed32Entry\x12\x36\n\rm_int32_float\x18q \x03(\x0b\x32\x1f.Test.TypesMsg.MInt32FloatEntry\x12\x38\n\x0em_int32_double\x18r \x03(\x0b\x32 .Test.TypesMsg.MInt32DoubleEntry\x12\x36\n\rm_int32_bytes\x18s \x03(\x0b\x32\x1f.Test.TypesMsg.MInt32BytesEntry\x12\x43\n\x14m_int32_foreign_enum\x18t \x03(\x0b\x32%.Test.TypesMsg.MInt32ForeignEnumEntry\x12\x41\n\x13m_int32_foreign_msg\x18u \x03(\x0b\x32$.Test.TypesMsg.MInt32ForeignMsgEntry\x12\x16\n\x0boneof_int32\x18\x82\x01 \x01(\x05H\x00\x12\x17\n\x0coneof_string\x18\x83\x01 \x01(\tH\x00\x12\x35\n\x10oneof_nested_msg\x18\x84\x01 \x01(\x0b\x32\x18.Test.TypesMsg.NestedMsgH\x00\x12*\n\nouter_enum\x18\xc9\x01 \x01(\x0e\x32\x15.Test.Outer.OuterEnum\x12(\n\touter_msg\x18\xca\x01 \x01(\x0b\x32\x14.Test.Outer.OuterMsg\x12\x30\n\ninner_enum\x18\xcb\x01 \x01(\x0e\x32\x1b.Test.Outer.Inner.InnerEnum\x12.\n\tinner_msg\x18\xcc\x01 \x01(\x0b\x32\x1a.Test.Outer.Inner.InnerMsg\x12*\n\rrecursive_msg\x18\xfb\x01 \x01(\x0b\x32\x12.Test.RecursiveMsg\x12\x13\n\x07max_tag\x18\xff\xff\xff\xff\x01 \x01(\x05\x1a\x1a\n\tNestedMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x1a\x32\n\x10MInt32Int32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a\x34\n\x12MSint32Sint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x11\x12\r\n\x05value\x18\x02 \x01(\x11:\x02\x38\x01\x1a\x34\n\x12MUint32Uint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x32\n\x10MInt64Int64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x34\n\x12MSint64Sint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x12\x12\r\n\x05value\x18\x02 \x01(\x12:\x02\x38\x01\x1a\x34\n\x12MUint64Uint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\x1a\x30\n\x0eMBoolBoolEntry\x12\x0b\n\x03key\x18\x01 \x01(\x08\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x36\n\x14MFixed64Fixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x06\x12\r\n\x05value\x18\x02 \x01(\x06:\x02\x38\x01\x1a\x38\n\x16MSfixed64Sfixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x10\x12\r\n\x05value\x18\x02 \x01(\x10:\x02\x38\x01\x1a\x34\n\x12MStringStringEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14MFixed32Fixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x07\x12\r\n\x05value\x18\x02 \x01(\x07:\x02\x38\x01\x1a\x38\n\x16MSfixed32Sfixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x0f\x12\r\n\x05value\x18\x02 \x01(\x0f:\x02\x38\x01\x1a\x32\n\x10MInt32FloatEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x33\n\x11MInt32DoubleEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x32\n\x10MInt32BytesEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1aK\n\x16MInt32ForeignEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12 \n\x05value\x18\x02 \x01(\x0e\x32\x11.Test.ForeignEnum:\x02\x38\x01\x1aI\n\x15MInt32ForeignMsgEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.Test.ForeignMsg:\x02\x38\x01\":\n\nNestedEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01\x12\x07\n\x03TWO\x10\x02\x12\x10\n\x03NEG\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x42\t\n\x07\x66_oneof\"\n\n\x08\x45mptyMsg\"\x1b\n\nForeignMsg\x12\r\n\x05value\x18\x01 \x01(\x05\"@\n\x0cRecursiveMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12!\n\x05\x63hild\x18\x02 \x01(\x0b\x32\x12.Test.RecursiveMsg\"\xaf\x02\n\x05Outer\x1am\n\x08OuterMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12#\n\x04\x65num\x18\x02 \x01(\x0e\x32\x15.Test.Outer.OuterEnum\x12-\n\tinner_msg\x18\x03 \x01(\x0b\x32\x1a.Test.Outer.Inner.InnerMsg\x1a\x96\x01\n\x05Inner\x1am\n\x08InnerMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12)\n\x04\x65num\x18\x02 \x01(\x0e\x32\x1b.Test.Outer.Inner.InnerEnum\x12\'\n\touter_msg\x18\x03 \x01(\x0b\x32\x14.Test.Outer.OuterMsg\"\x1e\n\tInnerEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01\"\x1e\n\tOuterEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01*]\n\x0b\x46oreignEnum\x12\x10\n\x0c\x46OREIGN_ZERO\x10\x00\x12\x10\n\x0c\x46OREIGN_FOUR\x10\x04\x12\x10\n\x0c\x46OREIGN_FIVE\x10\x05\x12\x18\n\x0b\x46OREIGN_NEG\x10\xfe\xff\xff\xff\xff\xff\xff\xff\xff\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0btypes.proto\x12\ntest.types\x1a\x0cimport.proto\"\xa7 \n\x08TypesMsg\x12\x0f\n\x07\x66_int32\x18\x01 \x01(\x05\x12\x10\n\x08\x66_sint32\x18\x02 \x01(\x11\x12\x10\n\x08\x66_uint32\x18\x03 \x01(\r\x12\x0f\n\x07\x66_int64\x18\x04 \x01(\x03\x12\x10\n\x08\x66_sint64\x18\x05 \x01(\x12\x12\x10\n\x08\x66_uint64\x18\x06 \x01(\x04\x12\x0e\n\x06\x66_bool\x18\x07 \x01(\x08\x12\x36\n\rf_nested_enum\x18\x08 \x01(\x0e\x32\x1f.test.types.TypesMsg.NestedEnum\x12/\n\x0e\x66_foreign_enum\x18\t \x01(\x0e\x32\x17.test.types.ForeignEnum\x12\x11\n\tf_fixed64\x18\n \x01(\x06\x12\x12\n\nf_sfixed64\x18\x0b \x01(\x10\x12\x10\n\x08\x66_double\x18\x0c \x01(\x01\x12\x10\n\x08\x66_string\x18\r \x01(\t\x12\x0f\n\x07\x66_bytes\x18\x0e \x01(\x0c\x12\x34\n\x0c\x66_nested_msg\x18\x0f \x01(\x0b\x32\x1e.test.types.TypesMsg.NestedMsg\x12-\n\rf_foreign_msg\x18\x10 \x01(\x0b\x32\x16.test.types.ForeignMsg\x12)\n\x0b\x66_empty_msg\x18\x11 \x01(\x0b\x32\x14.test.types.EmptyMsg\x12+\n\x0e\x66_imported_msg\x18\x12 \x01(\x0b\x32\x13.Import.ImportedMsg\x12\x11\n\tf_fixed32\x18\x13 \x01(\x07\x12\x12\n\nf_sfixed32\x18\x14 \x01(\x0f\x12\x0f\n\x07\x66_float\x18\x15 \x01(\x02\x12\x0f\n\x07r_int32\x18\x1f \x03(\x05\x12\x10\n\x08r_sint32\x18  \x03(\x11\x12\x10\n\x08r_uint32\x18! \x03(\r\x12\x0f\n\x07r_int64\x18\" \x03(\x03\x12\x10\n\x08r_sint64\x18# \x03(\x12\x12\x10\n\x08r_uint64\x18$ \x03(\x04\x12\x0e\n\x06r_bool\x18% \x03(\x08\x12\x36\n\rr_nested_enum\x18& \x03(\x0e\x32\x1f.test.types.TypesMsg.NestedEnum\x12/\n\x0er_foreign_enum\x18\' \x03(\x0e\x32\x17.test.types.ForeignEnum\x12\x11\n\tr_fixed64\x18( \x03(\x06\x12\x12\n\nr_sfixed64\x18) \x03(\x10\x12\x10\n\x08r_double\x18* \x03(\x01\x12\x10\n\x08r_string\x18+ \x03(\t\x12\x0f\n\x07r_bytes\x18, \x03(\x0c\x12\x34\n\x0cr_nested_msg\x18- \x03(\x0b\x32\x1e.test.types.TypesMsg.NestedMsg\x12-\n\rr_foreign_msg\x18. \x03(\x0b\x32\x16.test.types.ForeignMsg\x12)\n\x0br_empty_msg\x18/ \x03(\x0b\x32\x14.test.types.EmptyMsg\x12+\n\x0er_imported_msg\x18\x30 \x03(\x0b\x32\x13.Import.ImportedMsg\x12\x11\n\tr_fixed32\x18\x31 \x03(\x07\x12\x12\n\nr_sfixed32\x18\x32 \x03(\x0f\x12\x0f\n\x07r_float\x18\x33 \x03(\x02\x12\x13\n\x07p_int32\x18= \x03(\x05\x42\x02\x10\x01\x12\x14\n\x08p_sint32\x18> \x03(\x11\x42\x02\x10\x01\x12\x14\n\x08p_uint32\x18? \x03(\rB\x02\x10\x01\x12\x13\n\x07p_int64\x18@ \x03(\x03\x42\x02\x10\x01\x12\x14\n\x08p_sint64\x18\x41 \x03(\x12\x42\x02\x10\x01\x12\x14\n\x08p_uint64\x18\x42 \x03(\x04\x42\x02\x10\x01\x12\x12\n\x06p_bool\x18\x43 \x03(\x08\x42\x02\x10\x01\x12:\n\rp_nested_enum\x18\x44 \x03(\x0e\x32\x1f.test.types.TypesMsg.NestedEnumB\x02\x10\x01\x12\x33\n\x0ep_foreign_enum\x18\x45 \x03(\x0e\x32\x17.test.types.ForeignEnumB\x02\x10\x01\x12\x15\n\tp_fixed64\x18\x46 \x03(\x06\x42\x02\x10\x01\x12\x16\n\np_sfixed64\x18G \x03(\x10\x42\x02\x10\x01\x12\x14\n\x08p_double\x18H \x03(\x01\x42\x02\x10\x01\x12\x15\n\tp_fixed32\x18N \x03(\x07\x42\x02\x10\x01\x12\x16\n\np_sfixed32\x18O \x03(\x0f\x42\x02\x10\x01\x12\x13\n\x07p_float\x18P \x03(\x02\x42\x02\x10\x01\x12<\n\rm_int32_int32\x18\x65 \x03(\x0b\x32%.test.types.TypesMsg.MInt32Int32Entry\x12@\n\x0fm_sint32_sint32\x18\x66 \x03(\x0b\x32\'.test.types.TypesMsg.MSint32Sint32Entry\x12@\n\x0fm_uint32_uint32\x18g \x03(\x0b\x32\'.test.types.TypesMsg.MUint32Uint32Entry\x12<\n\rm_int64_int64\x18h \x03(\x0b\x32%.test.types.TypesMsg.MInt64Int64Entry\x12@\n\x0fm_sint64_sint64\x18i \x03(\x0b\x32\'.test.types.TypesMsg.MSint64Sint64Entry\x12@\n\x0fm_uint64_uint64\x18j \x03(\x0b\x32\'.test.types.TypesMsg.MUint64Uint64Entry\x12\x38\n\x0bm_bool_bool\x18k \x03(\x0b\x32#.test.types.TypesMsg.MBoolBoolEntry\x12\x44\n\x11m_fixed64_fixed64\x18l \x03(\x0b\x32).test.types.TypesMsg.MFixed64Fixed64Entry\x12H\n\x13m_sfixed64_sfixed64\x18m \x03(\x0b\x32+.test.types.TypesMsg.MSfixed64Sfixed64Entry\x12@\n\x0fm_string_string\x18n \x03(\x0b\x32\'.test.types.TypesMsg.MStringStringEntry\x12\x44\n\x11m_fixed32_fixed32\x18o \x03(\x0b\x32).test.types.TypesMsg.MFixed32Fixed32Entry\x12H\n\x13m_sfixed32_sfixed32\x18p \x03(\x0b\x32+.test.types.TypesMsg.MSfixed32Sfixed32Entry\x12<\n\rm_int32_float\x18q \x03(\x0b\x32%.test.types.TypesMsg.MInt32FloatEntry\x12>\n\x0em_int32_double\x18r \x03(\x0b\x32&.test.types.TypesMsg.MInt32DoubleEntry\x12<\n\rm_int32_bytes\x18s \x03(\x0b\x32%.test.types.TypesMsg.MInt32BytesEntry\x12I\n\x14m_int32_foreign_enum\x18t \x03(\x0b\x32+.test.types.TypesMsg.MInt32ForeignEnumEntry\x12G\n\x13m_int32_foreign_msg\x18u \x03(\x0b\x32*.test.types.TypesMsg.MInt32ForeignMsgEntry\x12\x16\n\x0boneof_int32\x18\x82\x01 \x01(\x05H\x00\x12\x17\n\x0coneof_string\x18\x83\x01 \x01(\tH\x00\x12;\n\x10oneof_nested_msg\x18\x84\x01 \x01(\x0b\x32\x1e.test.types.TypesMsg.NestedMsgH\x00\x12\x30\n\nouter_enum\x18\xc9\x01 \x01(\x0e\x32\x1b.test.types.Outer.OuterEnum\x12.\n\touter_msg\x18\xca\x01 \x01(\x0b\x32\x1a.test.types.Outer.OuterMsg\x12\x36\n\ninner_enum\x18\xcb\x01 \x01(\x0e\x32!.test.types.Outer.Inner.InnerEnum\x12\x34\n\tinner_msg\x18\xcc\x01 \x01(\x0b\x32 .test.types.Outer.Inner.InnerMsg\x12\x30\n\rrecursive_msg\x18\xfb\x01 \x01(\x0b\x32\x18.test.types.RecursiveMsg\x12\x13\n\x07max_tag\x18\xff\xff\xff\xff\x01 \x01(\x05\x1a\x1a\n\tNestedMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x1a\x32\n\x10MInt32Int32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a\x34\n\x12MSint32Sint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x11\x12\r\n\x05value\x18\x02 \x01(\x11:\x02\x38\x01\x1a\x34\n\x12MUint32Uint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x32\n\x10MInt64Int64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x34\n\x12MSint64Sint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x12\x12\r\n\x05value\x18\x02 \x01(\x12:\x02\x38\x01\x1a\x34\n\x12MUint64Uint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\x1a\x30\n\x0eMBoolBoolEntry\x12\x0b\n\x03key\x18\x01 \x01(\x08\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x36\n\x14MFixed64Fixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x06\x12\r\n\x05value\x18\x02 \x01(\x06:\x02\x38\x01\x1a\x38\n\x16MSfixed64Sfixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x10\x12\r\n\x05value\x18\x02 \x01(\x10:\x02\x38\x01\x1a\x34\n\x12MStringStringEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14MFixed32Fixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x07\x12\r\n\x05value\x18\x02 \x01(\x07:\x02\x38\x01\x1a\x38\n\x16MSfixed32Sfixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x0f\x12\r\n\x05value\x18\x02 \x01(\x0f:\x02\x38\x01\x1a\x32\n\x10MInt32FloatEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x33\n\x11MInt32DoubleEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x32\n\x10MInt32BytesEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1aQ\n\x16MInt32ForeignEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12&\n\x05value\x18\x02 \x01(\x0e\x32\x17.test.types.ForeignEnum:\x02\x38\x01\x1aO\n\x15MInt32ForeignMsgEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.test.types.ForeignMsg:\x02\x38\x01\":\n\nNestedEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01\x12\x07\n\x03TWO\x10\x02\x12\x10\n\x03NEG\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x42\t\n\x07\x66_oneof\"\n\n\x08\x45mptyMsg\"\x1b\n\nForeignMsg\x12\r\n\x05value\x18\x01 \x01(\x05\"F\n\x0cRecursiveMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12\'\n\x05\x63hild\x18\x02 \x01(\x0b\x32\x18.test.types.RecursiveMsg\"\xc7\x02\n\x05Outer\x1ay\n\x08OuterMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12)\n\x04\x65num\x18\x02 \x01(\x0e\x32\x1b.test.types.Outer.OuterEnum\x12\x33\n\tinner_msg\x18\x03 \x01(\x0b\x32 .test.types.Outer.Inner.InnerMsg\x1a\xa2\x01\n\x05Inner\x1ay\n\x08InnerMsg\x12\r\n\x05value\x18\x01 \x01(\x05\x12/\n\x04\x65num\x18\x02 \x01(\x0e\x32!.test.types.Outer.Inner.InnerEnum\x12-\n\touter_msg\x18\x03 \x01(\x0b\x32\x1a.test.types.Outer.OuterMsg\"\x1e\n\tInnerEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01\"\x1e\n\tOuterEnum\x12\x08\n\x04ZERO\x10\x00\x12\x07\n\x03ONE\x10\x01*]\n\x0b\x46oreignEnum\x12\x10\n\x0c\x46OREIGN_ZERO\x10\x00\x12\x10\n\x0c\x46OREIGN_FOUR\x10\x04\x12\x10\n\x0c\x46OREIGN_FIVE\x10\x05\x12\x18\n\x0b\x46OREIGN_NEG\x10\xfe\xff\xff\xff\xff\xff\xff\xff\xff\x01\x62\x06proto3')
   ,
   dependencies=[import__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _FOREIGNENUM = _descriptor.EnumDescriptor(
   name='ForeignEnum',
-  full_name='Test.ForeignEnum',
+  full_name='test.types.ForeignEnum',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -51,8 +51,8 @@ _FOREIGNENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4364,
-  serialized_end=4457,
+  serialized_start=4622,
+  serialized_end=4715,
 )
 _sym_db.RegisterEnumDescriptor(_FOREIGNENUM)
 
@@ -65,7 +65,7 @@ FOREIGN_NEG = -2
 
 _TYPESMSG_NESTEDENUM = _descriptor.EnumDescriptor(
   name='NestedEnum',
-  full_name='Test.TypesMsg.NestedEnum',
+  full_name='test.types.TypesMsg.NestedEnum',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -88,14 +88,14 @@ _TYPESMSG_NESTEDENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3880,
-  serialized_end=3938,
+  serialized_start=4108,
+  serialized_end=4166,
 )
 _sym_db.RegisterEnumDescriptor(_TYPESMSG_NESTEDENUM)
 
 _OUTER_INNER_INNERENUM = _descriptor.EnumDescriptor(
   name='InnerEnum',
-  full_name='Test.Outer.Inner.InnerEnum',
+  full_name='test.types.Outer.Inner.InnerEnum',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -110,14 +110,14 @@ _OUTER_INNER_INNERENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4300,
-  serialized_end=4330,
+  serialized_start=4558,
+  serialized_end=4588,
 )
 _sym_db.RegisterEnumDescriptor(_OUTER_INNER_INNERENUM)
 
 _OUTER_OUTERENUM = _descriptor.EnumDescriptor(
   name='OuterEnum',
-  full_name='Test.Outer.OuterEnum',
+  full_name='test.types.Outer.OuterEnum',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -132,21 +132,21 @@ _OUTER_OUTERENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4332,
-  serialized_end=4362,
+  serialized_start=4590,
+  serialized_end=4620,
 )
 _sym_db.RegisterEnumDescriptor(_OUTER_OUTERENUM)
 
 
 _TYPESMSG_NESTEDMSG = _descriptor.Descriptor(
   name='NestedMsg',
-  full_name='Test.TypesMsg.NestedMsg',
+  full_name='test.types.TypesMsg.NestedMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.NestedMsg.value', index=0,
+      name='value', full_name='test.types.TypesMsg.NestedMsg.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -164,26 +164,26 @@ _TYPESMSG_NESTEDMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2891,
-  serialized_end=2917,
+  serialized_start=3107,
+  serialized_end=3133,
 )
 
 _TYPESMSG_MINT32INT32ENTRY = _descriptor.Descriptor(
   name='MInt32Int32Entry',
-  full_name='Test.TypesMsg.MInt32Int32Entry',
+  full_name='test.types.TypesMsg.MInt32Int32Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32Int32Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32Int32Entry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32Int32Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32Int32Entry.value', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -201,26 +201,26 @@ _TYPESMSG_MINT32INT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2919,
-  serialized_end=2969,
+  serialized_start=3135,
+  serialized_end=3185,
 )
 
 _TYPESMSG_MSINT32SINT32ENTRY = _descriptor.Descriptor(
   name='MSint32Sint32Entry',
-  full_name='Test.TypesMsg.MSint32Sint32Entry',
+  full_name='test.types.TypesMsg.MSint32Sint32Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MSint32Sint32Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MSint32Sint32Entry.key', index=0,
       number=1, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MSint32Sint32Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MSint32Sint32Entry.value', index=1,
       number=2, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -238,26 +238,26 @@ _TYPESMSG_MSINT32SINT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2971,
-  serialized_end=3023,
+  serialized_start=3187,
+  serialized_end=3239,
 )
 
 _TYPESMSG_MUINT32UINT32ENTRY = _descriptor.Descriptor(
   name='MUint32Uint32Entry',
-  full_name='Test.TypesMsg.MUint32Uint32Entry',
+  full_name='test.types.TypesMsg.MUint32Uint32Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MUint32Uint32Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MUint32Uint32Entry.key', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MUint32Uint32Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MUint32Uint32Entry.value', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -275,26 +275,26 @@ _TYPESMSG_MUINT32UINT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3025,
-  serialized_end=3077,
+  serialized_start=3241,
+  serialized_end=3293,
 )
 
 _TYPESMSG_MINT64INT64ENTRY = _descriptor.Descriptor(
   name='MInt64Int64Entry',
-  full_name='Test.TypesMsg.MInt64Int64Entry',
+  full_name='test.types.TypesMsg.MInt64Int64Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt64Int64Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt64Int64Entry.key', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt64Int64Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt64Int64Entry.value', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -312,26 +312,26 @@ _TYPESMSG_MINT64INT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3079,
-  serialized_end=3129,
+  serialized_start=3295,
+  serialized_end=3345,
 )
 
 _TYPESMSG_MSINT64SINT64ENTRY = _descriptor.Descriptor(
   name='MSint64Sint64Entry',
-  full_name='Test.TypesMsg.MSint64Sint64Entry',
+  full_name='test.types.TypesMsg.MSint64Sint64Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MSint64Sint64Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MSint64Sint64Entry.key', index=0,
       number=1, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MSint64Sint64Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MSint64Sint64Entry.value', index=1,
       number=2, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -349,26 +349,26 @@ _TYPESMSG_MSINT64SINT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3131,
-  serialized_end=3183,
+  serialized_start=3347,
+  serialized_end=3399,
 )
 
 _TYPESMSG_MUINT64UINT64ENTRY = _descriptor.Descriptor(
   name='MUint64Uint64Entry',
-  full_name='Test.TypesMsg.MUint64Uint64Entry',
+  full_name='test.types.TypesMsg.MUint64Uint64Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MUint64Uint64Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MUint64Uint64Entry.key', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MUint64Uint64Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MUint64Uint64Entry.value', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -386,26 +386,26 @@ _TYPESMSG_MUINT64UINT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3185,
-  serialized_end=3237,
+  serialized_start=3401,
+  serialized_end=3453,
 )
 
 _TYPESMSG_MBOOLBOOLENTRY = _descriptor.Descriptor(
   name='MBoolBoolEntry',
-  full_name='Test.TypesMsg.MBoolBoolEntry',
+  full_name='test.types.TypesMsg.MBoolBoolEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MBoolBoolEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MBoolBoolEntry.key', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MBoolBoolEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MBoolBoolEntry.value', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -423,26 +423,26 @@ _TYPESMSG_MBOOLBOOLENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3239,
-  serialized_end=3287,
+  serialized_start=3455,
+  serialized_end=3503,
 )
 
 _TYPESMSG_MFIXED64FIXED64ENTRY = _descriptor.Descriptor(
   name='MFixed64Fixed64Entry',
-  full_name='Test.TypesMsg.MFixed64Fixed64Entry',
+  full_name='test.types.TypesMsg.MFixed64Fixed64Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MFixed64Fixed64Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MFixed64Fixed64Entry.key', index=0,
       number=1, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MFixed64Fixed64Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MFixed64Fixed64Entry.value', index=1,
       number=2, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -460,26 +460,26 @@ _TYPESMSG_MFIXED64FIXED64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3289,
-  serialized_end=3343,
+  serialized_start=3505,
+  serialized_end=3559,
 )
 
 _TYPESMSG_MSFIXED64SFIXED64ENTRY = _descriptor.Descriptor(
   name='MSfixed64Sfixed64Entry',
-  full_name='Test.TypesMsg.MSfixed64Sfixed64Entry',
+  full_name='test.types.TypesMsg.MSfixed64Sfixed64Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MSfixed64Sfixed64Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MSfixed64Sfixed64Entry.key', index=0,
       number=1, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MSfixed64Sfixed64Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MSfixed64Sfixed64Entry.value', index=1,
       number=2, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -497,26 +497,26 @@ _TYPESMSG_MSFIXED64SFIXED64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3345,
-  serialized_end=3401,
+  serialized_start=3561,
+  serialized_end=3617,
 )
 
 _TYPESMSG_MSTRINGSTRINGENTRY = _descriptor.Descriptor(
   name='MStringStringEntry',
-  full_name='Test.TypesMsg.MStringStringEntry',
+  full_name='test.types.TypesMsg.MStringStringEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MStringStringEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MStringStringEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MStringStringEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MStringStringEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -534,26 +534,26 @@ _TYPESMSG_MSTRINGSTRINGENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3403,
-  serialized_end=3455,
+  serialized_start=3619,
+  serialized_end=3671,
 )
 
 _TYPESMSG_MFIXED32FIXED32ENTRY = _descriptor.Descriptor(
   name='MFixed32Fixed32Entry',
-  full_name='Test.TypesMsg.MFixed32Fixed32Entry',
+  full_name='test.types.TypesMsg.MFixed32Fixed32Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MFixed32Fixed32Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MFixed32Fixed32Entry.key', index=0,
       number=1, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MFixed32Fixed32Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MFixed32Fixed32Entry.value', index=1,
       number=2, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -571,26 +571,26 @@ _TYPESMSG_MFIXED32FIXED32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3457,
-  serialized_end=3511,
+  serialized_start=3673,
+  serialized_end=3727,
 )
 
 _TYPESMSG_MSFIXED32SFIXED32ENTRY = _descriptor.Descriptor(
   name='MSfixed32Sfixed32Entry',
-  full_name='Test.TypesMsg.MSfixed32Sfixed32Entry',
+  full_name='test.types.TypesMsg.MSfixed32Sfixed32Entry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MSfixed32Sfixed32Entry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MSfixed32Sfixed32Entry.key', index=0,
       number=1, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MSfixed32Sfixed32Entry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MSfixed32Sfixed32Entry.value', index=1,
       number=2, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -608,26 +608,26 @@ _TYPESMSG_MSFIXED32SFIXED32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3513,
-  serialized_end=3569,
+  serialized_start=3729,
+  serialized_end=3785,
 )
 
 _TYPESMSG_MINT32FLOATENTRY = _descriptor.Descriptor(
   name='MInt32FloatEntry',
-  full_name='Test.TypesMsg.MInt32FloatEntry',
+  full_name='test.types.TypesMsg.MInt32FloatEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32FloatEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32FloatEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32FloatEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32FloatEntry.value', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -645,26 +645,26 @@ _TYPESMSG_MINT32FLOATENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3571,
-  serialized_end=3621,
+  serialized_start=3787,
+  serialized_end=3837,
 )
 
 _TYPESMSG_MINT32DOUBLEENTRY = _descriptor.Descriptor(
   name='MInt32DoubleEntry',
-  full_name='Test.TypesMsg.MInt32DoubleEntry',
+  full_name='test.types.TypesMsg.MInt32DoubleEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32DoubleEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32DoubleEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32DoubleEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32DoubleEntry.value', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -682,26 +682,26 @@ _TYPESMSG_MINT32DOUBLEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3623,
-  serialized_end=3674,
+  serialized_start=3839,
+  serialized_end=3890,
 )
 
 _TYPESMSG_MINT32BYTESENTRY = _descriptor.Descriptor(
   name='MInt32BytesEntry',
-  full_name='Test.TypesMsg.MInt32BytesEntry',
+  full_name='test.types.TypesMsg.MInt32BytesEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32BytesEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32BytesEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32BytesEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32BytesEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -719,26 +719,26 @@ _TYPESMSG_MINT32BYTESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3676,
-  serialized_end=3726,
+  serialized_start=3892,
+  serialized_end=3942,
 )
 
 _TYPESMSG_MINT32FOREIGNENUMENTRY = _descriptor.Descriptor(
   name='MInt32ForeignEnumEntry',
-  full_name='Test.TypesMsg.MInt32ForeignEnumEntry',
+  full_name='test.types.TypesMsg.MInt32ForeignEnumEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32ForeignEnumEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32ForeignEnumEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32ForeignEnumEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32ForeignEnumEntry.value', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -756,26 +756,26 @@ _TYPESMSG_MINT32FOREIGNENUMENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3728,
-  serialized_end=3803,
+  serialized_start=3944,
+  serialized_end=4025,
 )
 
 _TYPESMSG_MINT32FOREIGNMSGENTRY = _descriptor.Descriptor(
   name='MInt32ForeignMsgEntry',
-  full_name='Test.TypesMsg.MInt32ForeignMsgEntry',
+  full_name='test.types.TypesMsg.MInt32ForeignMsgEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TypesMsg.MInt32ForeignMsgEntry.key', index=0,
+      name='key', full_name='test.types.TypesMsg.MInt32ForeignMsgEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TypesMsg.MInt32ForeignMsgEntry.value', index=1,
+      name='value', full_name='test.types.TypesMsg.MInt32ForeignMsgEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -793,593 +793,593 @@ _TYPESMSG_MINT32FOREIGNMSGENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3805,
-  serialized_end=3878,
+  serialized_start=4027,
+  serialized_end=4106,
 )
 
 _TYPESMSG = _descriptor.Descriptor(
   name='TypesMsg',
-  full_name='Test.TypesMsg',
+  full_name='test.types.TypesMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='f_int32', full_name='Test.TypesMsg.f_int32', index=0,
+      name='f_int32', full_name='test.types.TypesMsg.f_int32', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_sint32', full_name='Test.TypesMsg.f_sint32', index=1,
+      name='f_sint32', full_name='test.types.TypesMsg.f_sint32', index=1,
       number=2, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_uint32', full_name='Test.TypesMsg.f_uint32', index=2,
+      name='f_uint32', full_name='test.types.TypesMsg.f_uint32', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_int64', full_name='Test.TypesMsg.f_int64', index=3,
+      name='f_int64', full_name='test.types.TypesMsg.f_int64', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_sint64', full_name='Test.TypesMsg.f_sint64', index=4,
+      name='f_sint64', full_name='test.types.TypesMsg.f_sint64', index=4,
       number=5, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_uint64', full_name='Test.TypesMsg.f_uint64', index=5,
+      name='f_uint64', full_name='test.types.TypesMsg.f_uint64', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_bool', full_name='Test.TypesMsg.f_bool', index=6,
+      name='f_bool', full_name='test.types.TypesMsg.f_bool', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_nested_enum', full_name='Test.TypesMsg.f_nested_enum', index=7,
+      name='f_nested_enum', full_name='test.types.TypesMsg.f_nested_enum', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_foreign_enum', full_name='Test.TypesMsg.f_foreign_enum', index=8,
+      name='f_foreign_enum', full_name='test.types.TypesMsg.f_foreign_enum', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_fixed64', full_name='Test.TypesMsg.f_fixed64', index=9,
+      name='f_fixed64', full_name='test.types.TypesMsg.f_fixed64', index=9,
       number=10, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_sfixed64', full_name='Test.TypesMsg.f_sfixed64', index=10,
+      name='f_sfixed64', full_name='test.types.TypesMsg.f_sfixed64', index=10,
       number=11, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_double', full_name='Test.TypesMsg.f_double', index=11,
+      name='f_double', full_name='test.types.TypesMsg.f_double', index=11,
       number=12, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_string', full_name='Test.TypesMsg.f_string', index=12,
+      name='f_string', full_name='test.types.TypesMsg.f_string', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_bytes', full_name='Test.TypesMsg.f_bytes', index=13,
+      name='f_bytes', full_name='test.types.TypesMsg.f_bytes', index=13,
       number=14, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_nested_msg', full_name='Test.TypesMsg.f_nested_msg', index=14,
+      name='f_nested_msg', full_name='test.types.TypesMsg.f_nested_msg', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_foreign_msg', full_name='Test.TypesMsg.f_foreign_msg', index=15,
+      name='f_foreign_msg', full_name='test.types.TypesMsg.f_foreign_msg', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_empty_msg', full_name='Test.TypesMsg.f_empty_msg', index=16,
+      name='f_empty_msg', full_name='test.types.TypesMsg.f_empty_msg', index=16,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_imported_msg', full_name='Test.TypesMsg.f_imported_msg', index=17,
+      name='f_imported_msg', full_name='test.types.TypesMsg.f_imported_msg', index=17,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_fixed32', full_name='Test.TypesMsg.f_fixed32', index=18,
+      name='f_fixed32', full_name='test.types.TypesMsg.f_fixed32', index=18,
       number=19, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_sfixed32', full_name='Test.TypesMsg.f_sfixed32', index=19,
+      name='f_sfixed32', full_name='test.types.TypesMsg.f_sfixed32', index=19,
       number=20, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='f_float', full_name='Test.TypesMsg.f_float', index=20,
+      name='f_float', full_name='test.types.TypesMsg.f_float', index=20,
       number=21, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_int32', full_name='Test.TypesMsg.r_int32', index=21,
+      name='r_int32', full_name='test.types.TypesMsg.r_int32', index=21,
       number=31, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_sint32', full_name='Test.TypesMsg.r_sint32', index=22,
+      name='r_sint32', full_name='test.types.TypesMsg.r_sint32', index=22,
       number=32, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_uint32', full_name='Test.TypesMsg.r_uint32', index=23,
+      name='r_uint32', full_name='test.types.TypesMsg.r_uint32', index=23,
       number=33, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_int64', full_name='Test.TypesMsg.r_int64', index=24,
+      name='r_int64', full_name='test.types.TypesMsg.r_int64', index=24,
       number=34, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_sint64', full_name='Test.TypesMsg.r_sint64', index=25,
+      name='r_sint64', full_name='test.types.TypesMsg.r_sint64', index=25,
       number=35, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_uint64', full_name='Test.TypesMsg.r_uint64', index=26,
+      name='r_uint64', full_name='test.types.TypesMsg.r_uint64', index=26,
       number=36, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_bool', full_name='Test.TypesMsg.r_bool', index=27,
+      name='r_bool', full_name='test.types.TypesMsg.r_bool', index=27,
       number=37, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_nested_enum', full_name='Test.TypesMsg.r_nested_enum', index=28,
+      name='r_nested_enum', full_name='test.types.TypesMsg.r_nested_enum', index=28,
       number=38, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_foreign_enum', full_name='Test.TypesMsg.r_foreign_enum', index=29,
+      name='r_foreign_enum', full_name='test.types.TypesMsg.r_foreign_enum', index=29,
       number=39, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_fixed64', full_name='Test.TypesMsg.r_fixed64', index=30,
+      name='r_fixed64', full_name='test.types.TypesMsg.r_fixed64', index=30,
       number=40, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_sfixed64', full_name='Test.TypesMsg.r_sfixed64', index=31,
+      name='r_sfixed64', full_name='test.types.TypesMsg.r_sfixed64', index=31,
       number=41, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_double', full_name='Test.TypesMsg.r_double', index=32,
+      name='r_double', full_name='test.types.TypesMsg.r_double', index=32,
       number=42, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_string', full_name='Test.TypesMsg.r_string', index=33,
+      name='r_string', full_name='test.types.TypesMsg.r_string', index=33,
       number=43, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_bytes', full_name='Test.TypesMsg.r_bytes', index=34,
+      name='r_bytes', full_name='test.types.TypesMsg.r_bytes', index=34,
       number=44, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_nested_msg', full_name='Test.TypesMsg.r_nested_msg', index=35,
+      name='r_nested_msg', full_name='test.types.TypesMsg.r_nested_msg', index=35,
       number=45, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_foreign_msg', full_name='Test.TypesMsg.r_foreign_msg', index=36,
+      name='r_foreign_msg', full_name='test.types.TypesMsg.r_foreign_msg', index=36,
       number=46, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_empty_msg', full_name='Test.TypesMsg.r_empty_msg', index=37,
+      name='r_empty_msg', full_name='test.types.TypesMsg.r_empty_msg', index=37,
       number=47, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_imported_msg', full_name='Test.TypesMsg.r_imported_msg', index=38,
+      name='r_imported_msg', full_name='test.types.TypesMsg.r_imported_msg', index=38,
       number=48, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_fixed32', full_name='Test.TypesMsg.r_fixed32', index=39,
+      name='r_fixed32', full_name='test.types.TypesMsg.r_fixed32', index=39,
       number=49, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_sfixed32', full_name='Test.TypesMsg.r_sfixed32', index=40,
+      name='r_sfixed32', full_name='test.types.TypesMsg.r_sfixed32', index=40,
       number=50, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='r_float', full_name='Test.TypesMsg.r_float', index=41,
+      name='r_float', full_name='test.types.TypesMsg.r_float', index=41,
       number=51, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='p_int32', full_name='Test.TypesMsg.p_int32', index=42,
+      name='p_int32', full_name='test.types.TypesMsg.p_int32', index=42,
       number=61, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_sint32', full_name='Test.TypesMsg.p_sint32', index=43,
+      name='p_sint32', full_name='test.types.TypesMsg.p_sint32', index=43,
       number=62, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_uint32', full_name='Test.TypesMsg.p_uint32', index=44,
+      name='p_uint32', full_name='test.types.TypesMsg.p_uint32', index=44,
       number=63, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_int64', full_name='Test.TypesMsg.p_int64', index=45,
+      name='p_int64', full_name='test.types.TypesMsg.p_int64', index=45,
       number=64, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_sint64', full_name='Test.TypesMsg.p_sint64', index=46,
+      name='p_sint64', full_name='test.types.TypesMsg.p_sint64', index=46,
       number=65, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_uint64', full_name='Test.TypesMsg.p_uint64', index=47,
+      name='p_uint64', full_name='test.types.TypesMsg.p_uint64', index=47,
       number=66, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_bool', full_name='Test.TypesMsg.p_bool', index=48,
+      name='p_bool', full_name='test.types.TypesMsg.p_bool', index=48,
       number=67, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_nested_enum', full_name='Test.TypesMsg.p_nested_enum', index=49,
+      name='p_nested_enum', full_name='test.types.TypesMsg.p_nested_enum', index=49,
       number=68, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_foreign_enum', full_name='Test.TypesMsg.p_foreign_enum', index=50,
+      name='p_foreign_enum', full_name='test.types.TypesMsg.p_foreign_enum', index=50,
       number=69, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_fixed64', full_name='Test.TypesMsg.p_fixed64', index=51,
+      name='p_fixed64', full_name='test.types.TypesMsg.p_fixed64', index=51,
       number=70, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_sfixed64', full_name='Test.TypesMsg.p_sfixed64', index=52,
+      name='p_sfixed64', full_name='test.types.TypesMsg.p_sfixed64', index=52,
       number=71, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_double', full_name='Test.TypesMsg.p_double', index=53,
+      name='p_double', full_name='test.types.TypesMsg.p_double', index=53,
       number=72, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_fixed32', full_name='Test.TypesMsg.p_fixed32', index=54,
+      name='p_fixed32', full_name='test.types.TypesMsg.p_fixed32', index=54,
       number=78, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_sfixed32', full_name='Test.TypesMsg.p_sfixed32', index=55,
+      name='p_sfixed32', full_name='test.types.TypesMsg.p_sfixed32', index=55,
       number=79, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='p_float', full_name='Test.TypesMsg.p_float', index=56,
+      name='p_float', full_name='test.types.TypesMsg.p_float', index=56,
       number=80, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='m_int32_int32', full_name='Test.TypesMsg.m_int32_int32', index=57,
+      name='m_int32_int32', full_name='test.types.TypesMsg.m_int32_int32', index=57,
       number=101, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_sint32_sint32', full_name='Test.TypesMsg.m_sint32_sint32', index=58,
+      name='m_sint32_sint32', full_name='test.types.TypesMsg.m_sint32_sint32', index=58,
       number=102, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_uint32_uint32', full_name='Test.TypesMsg.m_uint32_uint32', index=59,
+      name='m_uint32_uint32', full_name='test.types.TypesMsg.m_uint32_uint32', index=59,
       number=103, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int64_int64', full_name='Test.TypesMsg.m_int64_int64', index=60,
+      name='m_int64_int64', full_name='test.types.TypesMsg.m_int64_int64', index=60,
       number=104, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_sint64_sint64', full_name='Test.TypesMsg.m_sint64_sint64', index=61,
+      name='m_sint64_sint64', full_name='test.types.TypesMsg.m_sint64_sint64', index=61,
       number=105, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_uint64_uint64', full_name='Test.TypesMsg.m_uint64_uint64', index=62,
+      name='m_uint64_uint64', full_name='test.types.TypesMsg.m_uint64_uint64', index=62,
       number=106, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_bool_bool', full_name='Test.TypesMsg.m_bool_bool', index=63,
+      name='m_bool_bool', full_name='test.types.TypesMsg.m_bool_bool', index=63,
       number=107, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_fixed64_fixed64', full_name='Test.TypesMsg.m_fixed64_fixed64', index=64,
+      name='m_fixed64_fixed64', full_name='test.types.TypesMsg.m_fixed64_fixed64', index=64,
       number=108, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_sfixed64_sfixed64', full_name='Test.TypesMsg.m_sfixed64_sfixed64', index=65,
+      name='m_sfixed64_sfixed64', full_name='test.types.TypesMsg.m_sfixed64_sfixed64', index=65,
       number=109, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_string_string', full_name='Test.TypesMsg.m_string_string', index=66,
+      name='m_string_string', full_name='test.types.TypesMsg.m_string_string', index=66,
       number=110, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_fixed32_fixed32', full_name='Test.TypesMsg.m_fixed32_fixed32', index=67,
+      name='m_fixed32_fixed32', full_name='test.types.TypesMsg.m_fixed32_fixed32', index=67,
       number=111, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_sfixed32_sfixed32', full_name='Test.TypesMsg.m_sfixed32_sfixed32', index=68,
+      name='m_sfixed32_sfixed32', full_name='test.types.TypesMsg.m_sfixed32_sfixed32', index=68,
       number=112, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int32_float', full_name='Test.TypesMsg.m_int32_float', index=69,
+      name='m_int32_float', full_name='test.types.TypesMsg.m_int32_float', index=69,
       number=113, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int32_double', full_name='Test.TypesMsg.m_int32_double', index=70,
+      name='m_int32_double', full_name='test.types.TypesMsg.m_int32_double', index=70,
       number=114, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int32_bytes', full_name='Test.TypesMsg.m_int32_bytes', index=71,
+      name='m_int32_bytes', full_name='test.types.TypesMsg.m_int32_bytes', index=71,
       number=115, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int32_foreign_enum', full_name='Test.TypesMsg.m_int32_foreign_enum', index=72,
+      name='m_int32_foreign_enum', full_name='test.types.TypesMsg.m_int32_foreign_enum', index=72,
       number=116, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='m_int32_foreign_msg', full_name='Test.TypesMsg.m_int32_foreign_msg', index=73,
+      name='m_int32_foreign_msg', full_name='test.types.TypesMsg.m_int32_foreign_msg', index=73,
       number=117, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='oneof_int32', full_name='Test.TypesMsg.oneof_int32', index=74,
+      name='oneof_int32', full_name='test.types.TypesMsg.oneof_int32', index=74,
       number=130, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='oneof_string', full_name='Test.TypesMsg.oneof_string', index=75,
+      name='oneof_string', full_name='test.types.TypesMsg.oneof_string', index=75,
       number=131, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='oneof_nested_msg', full_name='Test.TypesMsg.oneof_nested_msg', index=76,
+      name='oneof_nested_msg', full_name='test.types.TypesMsg.oneof_nested_msg', index=76,
       number=132, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='outer_enum', full_name='Test.TypesMsg.outer_enum', index=77,
+      name='outer_enum', full_name='test.types.TypesMsg.outer_enum', index=77,
       number=201, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='outer_msg', full_name='Test.TypesMsg.outer_msg', index=78,
+      name='outer_msg', full_name='test.types.TypesMsg.outer_msg', index=78,
       number=202, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='inner_enum', full_name='Test.TypesMsg.inner_enum', index=79,
+      name='inner_enum', full_name='test.types.TypesMsg.inner_enum', index=79,
       number=203, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='inner_msg', full_name='Test.TypesMsg.inner_msg', index=80,
+      name='inner_msg', full_name='test.types.TypesMsg.inner_msg', index=80,
       number=204, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='recursive_msg', full_name='Test.TypesMsg.recursive_msg', index=81,
+      name='recursive_msg', full_name='test.types.TypesMsg.recursive_msg', index=81,
       number=251, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='max_tag', full_name='Test.TypesMsg.max_tag', index=82,
+      name='max_tag', full_name='test.types.TypesMsg.max_tag', index=82,
       number=536870911, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1398,17 +1398,17 @@ _TYPESMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='f_oneof', full_name='Test.TypesMsg.f_oneof',
+      name='f_oneof', full_name='test.types.TypesMsg.f_oneof',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=36,
-  serialized_end=3949,
+  serialized_start=42,
+  serialized_end=4177,
 )
 
 
 _EMPTYMSG = _descriptor.Descriptor(
   name='EmptyMsg',
-  full_name='Test.EmptyMsg',
+  full_name='test.types.EmptyMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1425,20 +1425,20 @@ _EMPTYMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3951,
-  serialized_end=3961,
+  serialized_start=4179,
+  serialized_end=4189,
 )
 
 
 _FOREIGNMSG = _descriptor.Descriptor(
   name='ForeignMsg',
-  full_name='Test.ForeignMsg',
+  full_name='test.types.ForeignMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.ForeignMsg.value', index=0,
+      name='value', full_name='test.types.ForeignMsg.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1456,27 +1456,27 @@ _FOREIGNMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3963,
-  serialized_end=3990,
+  serialized_start=4191,
+  serialized_end=4218,
 )
 
 
 _RECURSIVEMSG = _descriptor.Descriptor(
   name='RecursiveMsg',
-  full_name='Test.RecursiveMsg',
+  full_name='test.types.RecursiveMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.RecursiveMsg.value', index=0,
+      name='value', full_name='test.types.RecursiveMsg.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='child', full_name='Test.RecursiveMsg.child', index=1,
+      name='child', full_name='test.types.RecursiveMsg.child', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1494,34 +1494,34 @@ _RECURSIVEMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3992,
-  serialized_end=4056,
+  serialized_start=4220,
+  serialized_end=4290,
 )
 
 
 _OUTER_OUTERMSG = _descriptor.Descriptor(
   name='OuterMsg',
-  full_name='Test.Outer.OuterMsg',
+  full_name='test.types.Outer.OuterMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.Outer.OuterMsg.value', index=0,
+      name='value', full_name='test.types.Outer.OuterMsg.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='enum', full_name='Test.Outer.OuterMsg.enum', index=1,
+      name='enum', full_name='test.types.Outer.OuterMsg.enum', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='inner_msg', full_name='Test.Outer.OuterMsg.inner_msg', index=2,
+      name='inner_msg', full_name='test.types.Outer.OuterMsg.inner_msg', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1539,33 +1539,33 @@ _OUTER_OUTERMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4068,
-  serialized_end=4177,
+  serialized_start=4302,
+  serialized_end=4423,
 )
 
 _OUTER_INNER_INNERMSG = _descriptor.Descriptor(
   name='InnerMsg',
-  full_name='Test.Outer.Inner.InnerMsg',
+  full_name='test.types.Outer.Inner.InnerMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.Outer.Inner.InnerMsg.value', index=0,
+      name='value', full_name='test.types.Outer.Inner.InnerMsg.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='enum', full_name='Test.Outer.Inner.InnerMsg.enum', index=1,
+      name='enum', full_name='test.types.Outer.Inner.InnerMsg.enum', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='outer_msg', full_name='Test.Outer.Inner.InnerMsg.outer_msg', index=2,
+      name='outer_msg', full_name='test.types.Outer.Inner.InnerMsg.outer_msg', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1583,13 +1583,13 @@ _OUTER_INNER_INNERMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4189,
-  serialized_end=4298,
+  serialized_start=4435,
+  serialized_end=4556,
 )
 
 _OUTER_INNER = _descriptor.Descriptor(
   name='Inner',
-  full_name='Test.Outer.Inner',
+  full_name='test.types.Outer.Inner',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1607,13 +1607,13 @@ _OUTER_INNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4180,
-  serialized_end=4330,
+  serialized_start=4426,
+  serialized_end=4588,
 )
 
 _OUTER = _descriptor.Descriptor(
   name='Outer',
-  full_name='Test.Outer',
+  full_name='test.types.Outer',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1631,8 +1631,8 @@ _OUTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4059,
-  serialized_end=4362,
+  serialized_start=4293,
+  serialized_end=4620,
 )
 
 _TYPESMSG_NESTEDMSG.containing_type = _TYPESMSG
@@ -1724,131 +1724,131 @@ TypesMsg = _reflection.GeneratedProtocolMessageType('TypesMsg', (_message.Messag
   NestedMsg = _reflection.GeneratedProtocolMessageType('NestedMsg', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_NESTEDMSG,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.NestedMsg)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.NestedMsg)
     ))
   ,
 
   MInt32Int32Entry = _reflection.GeneratedProtocolMessageType('MInt32Int32Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32INT32ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32Int32Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32Int32Entry)
     ))
   ,
 
   MSint32Sint32Entry = _reflection.GeneratedProtocolMessageType('MSint32Sint32Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MSINT32SINT32ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MSint32Sint32Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MSint32Sint32Entry)
     ))
   ,
 
   MUint32Uint32Entry = _reflection.GeneratedProtocolMessageType('MUint32Uint32Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MUINT32UINT32ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MUint32Uint32Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MUint32Uint32Entry)
     ))
   ,
 
   MInt64Int64Entry = _reflection.GeneratedProtocolMessageType('MInt64Int64Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT64INT64ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt64Int64Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt64Int64Entry)
     ))
   ,
 
   MSint64Sint64Entry = _reflection.GeneratedProtocolMessageType('MSint64Sint64Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MSINT64SINT64ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MSint64Sint64Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MSint64Sint64Entry)
     ))
   ,
 
   MUint64Uint64Entry = _reflection.GeneratedProtocolMessageType('MUint64Uint64Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MUINT64UINT64ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MUint64Uint64Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MUint64Uint64Entry)
     ))
   ,
 
   MBoolBoolEntry = _reflection.GeneratedProtocolMessageType('MBoolBoolEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MBOOLBOOLENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MBoolBoolEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MBoolBoolEntry)
     ))
   ,
 
   MFixed64Fixed64Entry = _reflection.GeneratedProtocolMessageType('MFixed64Fixed64Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MFIXED64FIXED64ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MFixed64Fixed64Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MFixed64Fixed64Entry)
     ))
   ,
 
   MSfixed64Sfixed64Entry = _reflection.GeneratedProtocolMessageType('MSfixed64Sfixed64Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MSFIXED64SFIXED64ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MSfixed64Sfixed64Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MSfixed64Sfixed64Entry)
     ))
   ,
 
   MStringStringEntry = _reflection.GeneratedProtocolMessageType('MStringStringEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MSTRINGSTRINGENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MStringStringEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MStringStringEntry)
     ))
   ,
 
   MFixed32Fixed32Entry = _reflection.GeneratedProtocolMessageType('MFixed32Fixed32Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MFIXED32FIXED32ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MFixed32Fixed32Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MFixed32Fixed32Entry)
     ))
   ,
 
   MSfixed32Sfixed32Entry = _reflection.GeneratedProtocolMessageType('MSfixed32Sfixed32Entry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MSFIXED32SFIXED32ENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MSfixed32Sfixed32Entry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MSfixed32Sfixed32Entry)
     ))
   ,
 
   MInt32FloatEntry = _reflection.GeneratedProtocolMessageType('MInt32FloatEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32FLOATENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32FloatEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32FloatEntry)
     ))
   ,
 
   MInt32DoubleEntry = _reflection.GeneratedProtocolMessageType('MInt32DoubleEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32DOUBLEENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32DoubleEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32DoubleEntry)
     ))
   ,
 
   MInt32BytesEntry = _reflection.GeneratedProtocolMessageType('MInt32BytesEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32BYTESENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32BytesEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32BytesEntry)
     ))
   ,
 
   MInt32ForeignEnumEntry = _reflection.GeneratedProtocolMessageType('MInt32ForeignEnumEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32FOREIGNENUMENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32ForeignEnumEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32ForeignEnumEntry)
     ))
   ,
 
   MInt32ForeignMsgEntry = _reflection.GeneratedProtocolMessageType('MInt32ForeignMsgEntry', (_message.Message,), dict(
     DESCRIPTOR = _TYPESMSG_MINT32FOREIGNMSGENTRY,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TypesMsg.MInt32ForeignMsgEntry)
+    # @@protoc_insertion_point(class_scope:test.types.TypesMsg.MInt32ForeignMsgEntry)
     ))
   ,
   DESCRIPTOR = _TYPESMSG,
   __module__ = 'types_pb2'
-  # @@protoc_insertion_point(class_scope:Test.TypesMsg)
+  # @@protoc_insertion_point(class_scope:test.types.TypesMsg)
   ))
 _sym_db.RegisterMessage(TypesMsg)
 _sym_db.RegisterMessage(TypesMsg.NestedMsg)
@@ -1873,21 +1873,21 @@ _sym_db.RegisterMessage(TypesMsg.MInt32ForeignMsgEntry)
 EmptyMsg = _reflection.GeneratedProtocolMessageType('EmptyMsg', (_message.Message,), dict(
   DESCRIPTOR = _EMPTYMSG,
   __module__ = 'types_pb2'
-  # @@protoc_insertion_point(class_scope:Test.EmptyMsg)
+  # @@protoc_insertion_point(class_scope:test.types.EmptyMsg)
   ))
 _sym_db.RegisterMessage(EmptyMsg)
 
 ForeignMsg = _reflection.GeneratedProtocolMessageType('ForeignMsg', (_message.Message,), dict(
   DESCRIPTOR = _FOREIGNMSG,
   __module__ = 'types_pb2'
-  # @@protoc_insertion_point(class_scope:Test.ForeignMsg)
+  # @@protoc_insertion_point(class_scope:test.types.ForeignMsg)
   ))
 _sym_db.RegisterMessage(ForeignMsg)
 
 RecursiveMsg = _reflection.GeneratedProtocolMessageType('RecursiveMsg', (_message.Message,), dict(
   DESCRIPTOR = _RECURSIVEMSG,
   __module__ = 'types_pb2'
-  # @@protoc_insertion_point(class_scope:Test.RecursiveMsg)
+  # @@protoc_insertion_point(class_scope:test.types.RecursiveMsg)
   ))
 _sym_db.RegisterMessage(RecursiveMsg)
 
@@ -1896,7 +1896,7 @@ Outer = _reflection.GeneratedProtocolMessageType('Outer', (_message.Message,), d
   OuterMsg = _reflection.GeneratedProtocolMessageType('OuterMsg', (_message.Message,), dict(
     DESCRIPTOR = _OUTER_OUTERMSG,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.Outer.OuterMsg)
+    # @@protoc_insertion_point(class_scope:test.types.Outer.OuterMsg)
     ))
   ,
 
@@ -1905,17 +1905,17 @@ Outer = _reflection.GeneratedProtocolMessageType('Outer', (_message.Message,), d
     InnerMsg = _reflection.GeneratedProtocolMessageType('InnerMsg', (_message.Message,), dict(
       DESCRIPTOR = _OUTER_INNER_INNERMSG,
       __module__ = 'types_pb2'
-      # @@protoc_insertion_point(class_scope:Test.Outer.Inner.InnerMsg)
+      # @@protoc_insertion_point(class_scope:test.types.Outer.Inner.InnerMsg)
       ))
     ,
     DESCRIPTOR = _OUTER_INNER,
     __module__ = 'types_pb2'
-    # @@protoc_insertion_point(class_scope:Test.Outer.Inner)
+    # @@protoc_insertion_point(class_scope:test.types.Outer.Inner)
     ))
   ,
   DESCRIPTOR = _OUTER,
   __module__ = 'types_pb2'
-  # @@protoc_insertion_point(class_scope:Test.Outer)
+  # @@protoc_insertion_point(class_scope:test.types.Outer)
   ))
 _sym_db.RegisterMessage(Outer)
 _sym_db.RegisterMessage(Outer.OuterMsg)

@@ -1,6 +1,6 @@
-defmodule Test.Msg.Foreignenum do
+defmodule Test.Types.ForeignEnum do
   def type, do: :enum
-  def module, do: Test.Msg.Foreignenum
+  def module, do: Test.Types.ForeignEnum
   
   def value(:foreign_zero), do: 0
   def value(:foreign_four), do: 4
@@ -16,9 +16,9 @@ defmodule Test.Msg.Foreignenum do
   def keys, do: [:foreign_zero, :foreign_four, :foreign_five, :foreign_neg]
 end
 
-defmodule Test.Msg.Outer.Inner.Innerenum do
+defmodule Test.Types.Outer.Inner.InnerEnum do
   def type, do: :enum
-  def module, do: Test.Msg.Outer.Inner.Innerenum
+  def module, do: Test.Types.Outer.Inner.InnerEnum
   
   def value(:zero), do: 0
   def value(:one), do: 1
@@ -30,9 +30,9 @@ defmodule Test.Msg.Outer.Inner.Innerenum do
   def keys, do: [:zero, :one]
 end
 
-defmodule Test.Msg.Outer.Outerenum do
+defmodule Test.Types.Outer.OuterEnum do
   def type, do: :enum
-  def module, do: Test.Msg.Outer.Outerenum
+  def module, do: Test.Types.Outer.OuterEnum
   
   def value(:zero), do: 0
   def value(:one), do: 1
@@ -44,9 +44,9 @@ defmodule Test.Msg.Outer.Outerenum do
   def keys, do: [:zero, :one]
 end
 
-defmodule Test.Msg.TypesMsg.Nestedenum do
+defmodule Test.Types.TypesMsg.NestedEnum do
   def type, do: :enum
-  def module, do: Test.Msg.TypesMsg.Nestedenum
+  def module, do: Test.Types.TypesMsg.NestedEnum
   
   def value(:zero), do: 0
   def value(:one), do: 1
