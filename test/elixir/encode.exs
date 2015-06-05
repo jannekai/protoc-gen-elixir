@@ -41,6 +41,9 @@ defmodule Protobuf do
 
   @packed_types [:int32, :int64, :uint32, :uint64, :sint32, :sint64, :bool, :enum, :fixed64, :sfixed64, :double, :fixed32, :sfixed32, :float]
 
+  def encode(msg) do
+  end
+
   def encode(msg, fields) when is_list(fields) do
     encode_field fields, msg, []
   end
@@ -138,16 +141,9 @@ defmodule Protobuf do
   def encode_varint(v) when v <= 127 when v >= 0, do: <<v>>
   def encode_varint(v) when v >= 128, do: <<1 :: 1, (v &&& 127) :: 7, encode_varint(v >>> 7) :: binary>>
 
-  def decode_varint(b), do: decode_varint(b, 0, 0)
-  def decode_varint(<<1 :: 1, v :: 7, rest :: binary>>, n, acc), do: decode_varint(rest, n + 7, acc + (v <<< n))
-  def decode_varint(<<0 :: 1, v :: 7, rest :: binary>>, n, acc), do: {(v <<< n) + acc, rest}
-
   # ZigZag encoding is used for signed int types, makes negative values encode in smaller space in varint
   def encode_zigzag(v) when v >= 0, do: v * 2
   def encode_zigzag(v), do: v * -2 - 1
-
-  def decode_zigzag(v) when v &&& 1 == 0, do: v >>> 1
-  def decode_zigzag(v), do: (-(v+1)) >>> 1
 
   # Wire types
   def wire_type(:int32),    do: 0
@@ -172,4 +168,51 @@ defmodule Protobuf do
   def wire_type(:fixed32),  do: 5
   def wire_type(:sfixed32), do: 5
   def wire_type(:float),    do: 5
+end
+
+defmodule Protobuf.Decoder do
+  import Protobuf
+
+  use Bitwise
+
+  def decode(payload, descriptor) when is_list(payload), do decode IO.iodata_to_binary(payload), description
+  def decode(payload, messageType) do
+    decode_payload payload, messageType.descriptor(), struct(messageType)
+  end
+
+  defp decode_payload(payload, descriptor, msg, keys) do
+    {field_number, wire_type, payload} = decode_field_key payload
+    {value, payload} = read_value wire_type, payload
+
+  end
+
+  def decode_field_key(payload) do
+    {key, payload} = read_varint(payload)
+    {var >>> 3, key &&& 7, payload}
+  end
+
+  # Read value from payload binary, {wire_type, binary} -> {value, binary}
+  def read_value(0, payload), do: read_varint(payload)
+  def read_value(1, payload), do: read_64bit(payload)
+  def read_value(2, payload), do: read_bytes(payload)
+  def read_value(3, payload), do: read_32bit(payload)
+
+  def read_varint(b), do: decode_varint(b, 0, 0)
+  def read_varint(<<1 :: 1, v :: 7, rest :: binary>>, n, acc), do: read_varint(rest, n + 7, acc + (v <<< n))
+  def read_varint(<<0 :: 1, v :: 7, rest :: binary>>, n, acc), do: {(v <<< n) + acc, rest}
+
+  def read_64bit(<< value :: 64, payload :: binary>>), do: {value, payload}
+
+  def read_bytes(payload) do
+    {length, payload} = pop_varint payload
+    << bytes :: size(length)-binary, payload :: message >> = payload
+    {bytes, payload}
+  end
+
+  def read_32bit(<< value :: 32, payload :: binary>>), do: {value, payload}
+
+  # Decode zigzag encoded value
+  def decode_zigzag(v) when v &&& 1 == 0, do: v >>> 1
+  def decode_zigzag(v), do: (-(v+1)) >>> 1
+
 end
